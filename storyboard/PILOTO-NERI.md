@@ -33,7 +33,8 @@ Seis no Veo, três no Kling.
 Vá em **aistudio.google.com** → novo chat → modelo de **imagem** (Nano Banana /
 Gemini Image).
 
-Cole isto, exatamente assim, uma vez para cada personagem:
+Cole isto, exatamente assim, uma vez para cada personagem. **Já está montado —
+estilo, personagem e formato no mesmo texto. Não substitua nada.**
 
 **Zezão**
 ```
@@ -72,14 +73,16 @@ keyframe". Anexe:
 - P3, P4, P5 → anexe `zezao.png` **e** `marao.png`
 - P6, P9 → nada a anexar (é tela de celular)
 
-Antes de colar cada prompt, substitua:
+Use os arquivos de `prompts/01-neri/` — `P1-keyframe.txt` até `P9-keyframe.txt`.
+Já estão montados: estilo, personagem e cenário dentro do mesmo texto, nada a
+substituir. Abra, copia tudo, cola.
 
-| Marcador | Troque por |
-|---|---|
-| `[STYLE_BLOCK]` | o bloco de estilo lá do topo de `01-BIBLIA-PERSONAGENS.md` |
-| `[CHAR_ZEZAO]` | o texto do Zezão (o mesmo da folha) |
-| `[SET_OBRA]` etc. | o bloco do set em `02-CENARIOS.md` |
-| `[CAPA_NERI]` | anexe a capa do grupo como imagem e escreva "the attached group cover image" |
+> Foi exatamente isso que deu errado na primeira tentativa: colar só a descrição
+> do personagem, sem o bloco de estilo na frente. Sem ele, o gerador vai pro
+> padrão dele, que é foto-realista.
+
+Nos planos P5, P6 e P9 **anexe também a capa do grupo** — o prompt já diz
+"the attached Neri Tipster group cover image".
 
 Salve como `p1.png` … `p9.png`.
 

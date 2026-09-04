@@ -1,0 +1,1 @@
+macro static, the thumb scrolls endlessly, blue light pulses on the screen edge
