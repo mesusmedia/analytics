@@ -23,7 +23,7 @@
 |---|---|---|---|---|
 | 1 | 0.0–4.5 | Médio, obra ao meio-dia | Zezão empurra o carrinho de massa e para pra respirar | ELE NÃO FECHAVA O MÊS |
 | 2 | 4.5–9.5 | Detalhe do celular | Saldo na conta e a data do vencimento | O DIA 5 CHEGANDO |
-| 3 | 9.5–17.5 | Dois personagens, na sombra | Marão senta do lado e cita o grupo | TÔ NO GRUPO DO NERI |
+| 3 | 9.5–17.5 | Dois personagens, na sombra | Os dois já sentados; Marão vira o celular | TÔ NO GRUPO DO NERI |
 | 4 | 17.5–24.5 | Close em Marão | Marão explica quem é o Neri | ELE MANDA ANÁLISE, NÃO CHUTE |
 | 5 | 24.5–31.5 | Contra-plano, celular ao centro | Tela do grupo do Neri entre os dois | GRUPO DO NERI |
 | 6 | 31.5–38.5 | Detalhe do chat | Print da entrada e do green marcado | (prova social) |
