@@ -75,6 +75,25 @@ section.story .eyebrow{display:flex;align-items:center;gap:8px}
   .rn{flex-direction:row;gap:12px;align-items:baseline}
 }
 
+/* ---- piloto ---- */
+section.pilot{background:var(--surface);border-bottom:1px solid var(--line);
+  padding:48px 0 46px}
+ol.pipe{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:1px;
+  background:var(--line);border:1px solid var(--line);
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+ol.pipe li{background:var(--surface);padding:18px 18px 16px;display:flex;gap:14px;align-items:flex-start}
+.pnum{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--glow);
+  letter-spacing:.1em;padding-top:3px}
+ol.pipe h4{font-family:"Archivo",sans-serif;font-size:15px;margin:0 0 6px;
+  color:var(--ink);font-weight:700}
+ol.pipe p{margin:0 0 10px;font-size:14.5px;line-height:1.45}
+.tool{font-family:"Archivo",sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--glow);
+  background:var(--glow-soft);padding:3px 8px;border-radius:2px;margin-right:7px}
+.time{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--faint)}
+.footnote{margin:20px 0 0;font-size:14.5px;color:var(--muted)}
+.footnote code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink)}
+
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 
 /* ---- slate header ---- */
@@ -224,8 +243,22 @@ html{scroll-behavior:smooth}
 </div>
 </div></div></header>
 
-<nav class="films"><div class="wrap"><div class="films-in"><a href="#01-neri"><b>1</b>NERI</a><a href="#02-igor-sa"><b>2</b>IGOR SÁ</a><a href="#03-thierry"><b>3</b>THIERRY</a><a href="#04-generico-casal"><b>4</b>Genérico A</a><a href="#05-generico-buteco"><b>5</b>Genérico B</a><a class="sep" href="#referencia">Referência</a><a href="#v1"><b>V1</b>Ele tava perto de ser demitido</a><a href="#v2"><b>V2</b>Ele não acreditava em si mesmo</a><a href="#v3"><b>V3</b>A esposa dele não acreditou</a><a href="#v4"><b>V4</b>Ele não acreditou no cliente!!!</a><a href="#v5"><b>V5</b>Buteco dos cães</a></div></div></nav>
+<nav class="films"><div class="wrap"><div class="films-in"><a href="#piloto"><b>&#9654;</b>Comece aqui</a><a href="#01-neri"><b>1</b>NERI</a><a href="#02-igor-sa"><b>2</b>IGOR SÁ</a><a href="#03-thierry"><b>3</b>THIERRY</a><a href="#04-generico-casal"><b>4</b>Genérico A</a><a href="#05-generico-buteco"><b>5</b>Genérico B</a><a class="sep" href="#referencia">Referência</a><a href="#v1"><b>V1</b>Ele tava perto de ser demitido</a><a href="#v2"><b>V2</b>Ele não acreditava em si mesmo</a><a href="#v3"><b>V3</b>A esposa dele não acreditou</a><a href="#v4"><b>V4</b>Ele não acreditou no cliente!!!</a><a href="#v5"><b>V5</b>Buteco dos cães</a></div></div></nav>
 
+<section class="pilot" id="piloto"><div class="wrap">
+<div class="eyebrow">Comece por aqui · piloto</div>
+<h2>Do zero ao v&iacute;deo do Neri, em seis etapas</h2>
+<p class="arc" style="max-width:60ch">Duas horas no primeiro, metade disso nos seguintes &mdash; os personagens e os sets j&aacute; v&atilde;o existir. Uma hora dessas duas &eacute; fila de renderiza&ccedil;&atilde;o rodando sozinha.</p>
+<ol class="pipe">
+<li><span class="pnum">01</span><div><h4>Folhas de personagem</h4><p>Zez&atilde;o e Mar&atilde;o em turnaround, fundo neutro. S&atilde;o o que impede o rosto de mudar entre um plano e o seguinte.</p><span class="tool">AI Studio</span><span class="time">15 min</span></div></li>
+<li><span class="pnum">02</span><div><h4>Nove keyframes</h4><p>Um still por plano. Anexe a folha do personagem e cole o prompt de cada plano, trocando os marcadores pelos blocos travados.</p><span class="tool">AI Studio</span><span class="time">25 min</span></div></li>
+<li><span class="pnum">03</span><div><h4>Falas</h4><p>Oito linhas curtas em portugu&ecirc;s coloquial, uma por plano falado. Frase longa demais &eacute; a causa n&ordm;&nbsp;1 de lip sync ruim.</p><span class="tool">roteiro</span><span class="time">5 min</span></div></li>
+<li><span class="pnum">04</span><div><h4>Seis planos com fala</h4><p>P1, P3, P4, P5, P7, P8. Prompt de movimento mais a fala entre aspas &mdash; o Veo gera a voz junto do clipe.</p><span class="tool">Veo / Flow</span><span class="time">40 min</span></div></li>
+<li><span class="pnum">05</span><div><h4>Tr&ecirc;s planos mudos</h4><p>P2, P6, P9: tela do celular, print do chat e pack shot. S&oacute; movimento, sem gente falando &mdash; sai mais barato.</p><span class="tool">Kling</span><span class="time">20 min</span></div></li>
+<li><span class="pnum">06</span><div><h4>Montagem</h4><p>Nove clipes na ordem, legenda kara&ocirc;k&ecirc; em amarelo-ouro, trilha a &minus;18&nbsp;dB e o rodap&eacute; do Minist&eacute;rio fixo nos 58 segundos.</p><span class="tool">CapCut</span><span class="time">25 min</span></div></li>
+</ol>
+<p class="footnote">O passo a passo detalhado, com os prompts j&aacute; montados e os erros mais comuns, est&aacute; em <code>storyboard/PILOTO-NERI.md</code>.</p>
+</div></section>
 <section class="story" id="01-neri" style="--tint:#d9a520"><div class="wrap">
 <div class="fhead">
 <div><div class="eyebrow"><span class="dot"></span>NERI · Neri Tipster · Telegram</div>
