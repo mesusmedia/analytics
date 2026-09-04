@@ -71,3 +71,39 @@ Cada bloco é travado e reusado literalmente nos keyframes.
   quente; ônibus = azul frio + verde do celular).
 - **O verde do celular** é a assinatura visual da marca. Toda revelação do app tem
   luz verde no rosto.
+
+---
+
+# Sets novos — historinhas de tipster
+
+## SET_OBRA (Neri)
+> `Brazilian construction site at midday, unfinished grey concrete block walls,
+> exposed rebar, wooden scaffolding, a cement mixer, bags of cement stacked in the
+> shade, harsh overhead sun, dust in the air, hot bleached palette`
+
+## SET_QUITINETE (Neri)
+> `tiny one-room apartment at night, a single bed against a bare painted wall, a
+> small fan, a plastic table with a plate of rice and beans, a bare hanging bulb,
+> clothes drying on a line across the room, warm dim light`
+
+## SET_BARBEARIA (Igor Sá)
+> `Brazilian barbershop interior, black leather barber chair, large mirror with
+> warm bulb strip, wooden counter with clippers and combs, a wall TV showing
+> football, hexagonal tiles, plants, warm amber light`
+
+## SET_CALCADA_BARBEARIA (Igor Sá)
+> `sidewalk outside a barbershop at dusk, neon barber sign, plastic chairs on the
+> pavement, motorcycles parked at the kerb, the shop's warm light spilling out,
+> blue-purple evening sky`
+
+## SET_GUARITA (Thierry)
+> `night security booth at a residential building gate, a wall of small CCTV
+> monitors casting blue light, a swivel chair, a thermos and a mug on the counter,
+> an electric gate visible through the glass, empty street outside, cold blue and
+> green light`
+
+## SET_TELA_GRUPO (todos)
+> `close-up of a smartphone screen showing a Telegram group chat, dark theme, a
+> pinned group header with a circular profile photo and the group name, a stack of
+> message bubbles with a green tick reaction, timestamps, the phone held in a hand,
+> shallow depth of field, screen light on the fingers`

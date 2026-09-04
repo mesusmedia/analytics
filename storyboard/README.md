@@ -14,7 +14,12 @@ storyboard/
 ├── 02-CENARIOS.md            10 sets, blocos de prompt travados
 ├── 03-TIPSTERS.md            ficha por tipster, derivada da capa do grupo
 ├── roteiros/
-│   ├── _TEMPLATE-tipster.md  molde de 9 planos para cada historinha
+│   ├── 01-neri.md            servente de obra · Neri Tipster
+│   ├── 02-igor-sa.md         barbeiro · IGORSATIPS GRÁTIS
+│   ├── 03-thierry.md         porteira da madrugada · THIERRY
+│   ├── 04-generico-casal.md  genérico A · casal em casa
+│   ├── 05-generico-buteco.md genérico B · mesa do buteco
+│   ├── _TEMPLATE-tipster.md  molde de 9 planos
 │   └── V1..V5.md             decupagem dos vídeos de referência
 └── referencias/
     ├── frames/               52 frames, 1 por plano detectado
@@ -65,3 +70,21 @@ selo 18+ + "jogue com responsabilidade". Sem promessa de ganho garantido.
 Detecção de corte por diferença de histograma HSV (Bhattacharyya > 0.22, intervalo
 mínimo de 1.2s), 1 frame representativo no meio de cada plano. Script em
 `00-PIPELINE.md` não é necessário para reproduzir — os frames já estão versionados.
+
+
+## As cinco peças
+
+| # | Tipster | Protagonista | Mundo | Gancho |
+|---|---|---|---|---|
+| 1 | Neri Tipster | Zezão, servente | obra ao meio-dia → quitinete | ELE NÃO FECHAVA O MÊS |
+| 2 | IGORSATIPS | Wesley, barbeiro | barbearia → calçada | ELE OUVIA TODO MUNDO, MENOS ELE MESMO |
+| 3 | THIERRY | Deusa, porteira | guarita de madrugada | ELA PASSAVA A MADRUGADA ACORDADA |
+| 4 | genérico | André e Claudia | sala de casa | A MULHER DELE NÃO ACREDITOU |
+| 5 | genérico | Tião e Bigode | buteco | A MESA INTEIRA ERRAVA O MESMO PALPITE |
+
+Cinco mundos diferentes de propósito: obra, barbearia, guarita, sala e buteco.
+Rodando juntas no feed, não parecem a mesma peça repintada.
+
+O tipster nunca é modelado em 3D — entra pela capa original do grupo, composta na
+tela e no pack shot. Isso preserva o rosto que o público já reconhece e evita
+recriar a fisionomia de uma pessoa real.

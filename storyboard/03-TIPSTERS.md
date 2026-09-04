@@ -49,10 +49,50 @@ seated talking to camera, warm key light with a cool blue rim`
 
 ## Fichas preenchidas
 
-> _(uma seção por tipster — preenchidas conforme as capas forem chegando)_
+> As capas ficam em `referencias/capas/<slug>.jpg`. Elas **não** são redesenhadas:
+> entram compostas na tela do grupo e no pack shot, como `[CAPA_<NOME>]`.
 
-### 1. `<nome>`
-_pendente: capa + nome_
+### 1. NERI — `Neri Tipster`
+```
+GRUPO:   Telegram · Grátis · 67.215 inscritos
+NICHO:   basquete e futebol
+BIO:     "O melhor e mais assertivo grupo de Basquete e Futebol do Brasil"
+PALETA:  preto + amarelo-ouro
+CAPA:    homem de braços cruzados, boné escuro, barba cheia, camiseta preta,
+         bola de basquete atrás, selo amarelo "GRUPO GRÁTIS", fundo preto
+TOM:     firme e direto, tom de quem já provou serviço
+CTA:     "entra no grupo grátis do Neri"
+```
+> `[CAPA_NERI]` = a foto de capa original, composta na tela e no pack shot.
+> Assinatura de cor da peça: o **amarelo-ouro** do selo entra na legenda karaokê.
 
-### 2. `<nome>`
-_pendente_
+### 2. IGOR SÁ — `IGORSATIPS GRÁTIS`
+```
+GRUPO:   Telegram · Grátis · 25.726 inscritos
+NICHO:   basquete e futebol
+PALETA:  coral-vermelho + branco + azul de marina
+CAPA:    homem de camiseta branca larga ajustando o óculos escuro, de perfil,
+         marina com barcos e prédios ao fundo, dia claro, selo vermelho
+         "GRUPO GRÁTIS", logo hexagonal "IGOR SÁ"
+TOM:     leve e confiante, clima de dia bom
+CTA:     "entra no IgorSaTips grátis"
+```
+> `[CAPA_IGOR]`. A peça dele é a única com **luz de dia** — combina com a capa.
+
+### 3. THIERRY — `THIERRY`
+```
+GRUPO:   Telegram · Grátis · 142.294 inscritos
+NICHO:   futebol
+PALETA:  verde neon + preto
+CAPA:    homem sorrindo com os dois punhos cerrados em comemoração, camiseta
+         preta "THIERRY GRUPO GRÁTIS", fundo de estádio em verde neon com seta
+TOM:     comemorativo, energia de arquibancada
+CTA:     "entra no grupo grátis do Thierry"
+```
+> `[CAPA_THIERRY]`. O verde neon dela **é** o verde da revelação — nessa peça a
+> assinatura de luz e a marca são a mesma cor.
+
+### 4 e 5. Genéricos
+Duas peças sem tipster nomeado, para trocar a capa e o nome na montagem:
+`[CAPA_GENERICA]` e `<GRUPO>`. Servem para testar gancho novo sem queimar o nome
+de ninguém, e para reaproveitar quando entrar um tipster novo.
