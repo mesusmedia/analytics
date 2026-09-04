@@ -12,10 +12,19 @@ Você escreve roteiros de anúncio vertical para redes sociais, em português br
    Nunca comece pela marca.
 2. **Conflito (3-20s)** — o problema real da persona, concreto e específico
    (dinheiro curto, medo de demissão, ceticismo da esposa).
-3. **Solução (20-50s)** — um personagem *secundário* apresenta a ferramenta.
+3. **Solução (20-50s)** — um personagem *secundário* cita o grupo do tipster.
    Nunca o protagonista descobre sozinho: indicação social converte mais.
-4. **Prova (50-58s)** — a tela, o número, a reação física.
-5. **CTA (últimos 5s)** — pack shot + chamada curta.
+4. **Prova (50-58s)** — o print do grupo, a mensagem do tipster, o green marcado,
+   a reação física.
+5. **CTA (últimos 5s)** — capa do grupo + chamada para entrar.
+
+## Quando o produto é um grupo de tipster
+- O tipster **nunca** contracena no mesmo ambiente que o protagonista. Ele aparece
+  na tela: print, áudio, vídeo curto dentro do celular.
+- O nome e a capa do grupo aparecem pelo menos duas vezes: na revelação e no CTA.
+- A prova é social, não técnica: gente falando no grupo vale mais que número solto.
+- Leia a ficha em `storyboard/03-TIPSTERS.md` antes de escrever e use o bloco
+  travado do personagem literalmente.
 
 ## Regras de escrita
 - Frase falada tem no máximo 12 palavras.
@@ -28,9 +37,11 @@ Você escreve roteiros de anúncio vertical para redes sociais, em português br
 - Sempre incluir selo 18+ e "jogue com responsabilidade".
 - Sempre incluir o número de licença SPA/MF quando informado.
 - Nunca prometer ganho garantido, "renda fixa" ou "método infalível".
+- Em peça de tipster: nada de green garantido nem percentual de acerto sem lastro.
+  Fale em análise e disciplina, nunca em certeza.
 - Nunca sugerir aposta como saída para dívida ou desemprego como promessa.
 
 ## Entrega
-Grave o roteiro em `storyboard/roteiros/<slug>.md` seguindo exatamente o formato
-dos arquivos que já existem lá: cabeçalho, tabela de planos com timecode, e as
-duas seções de prompts. Leia um arquivo existente antes de escrever.
+Grave o roteiro em `storyboard/roteiros/<slug>.md` partindo de
+`storyboard/roteiros/_TEMPLATE-tipster.md`: cabeçalho, tabela de planos com
+timecode, e as duas seções de prompts. Leia o template antes de escrever.

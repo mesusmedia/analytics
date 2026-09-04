@@ -1,9 +1,11 @@
 # Pipeline: roteiro → storyboard → keyframe → animação
 
-Fluxo usado para remodelar os 5 vídeos "Jogada Esportiva / Beto IA".
+Fluxo usado para remodelar os 5 vídeos de referência em historinhas de **grupo
+de tipster** — uma peça por tipster, personagem derivado da capa do grupo.
 
 ```
-1. ROTEIRO           texto + falas + gancho          → roteiros/Vx.md
+0. FICHA DO TIPSTER  capa do grupo → bloco travado   → 03-TIPSTERS.md
+1. ROTEIRO           texto + falas + gancho          → roteiros/<tipster>.md
 2. DECUPAGEM         quebra em planos + timecode     → roteiros/Vx.md (tabela)
 3. BÍBLIA VISUAL     personagem + cenário travados   → 01-BIBLIA / 02-CENARIOS
 4. KEYFRAME          1 imagem por plano (9:16)       → gerador de imagem
