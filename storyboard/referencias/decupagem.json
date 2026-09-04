@@ -1,0 +1,396 @@
+{
+ "v1": {
+  "file": "3181d93b-Jogada_Esportiva_947415887643961_20260904.mp4",
+  "dur": 63.9,
+  "shots": [
+   {
+    "n": 1,
+    "in": 0.0,
+    "out": 2.3,
+    "dur": 2.3,
+    "frame": "shots/v1_s01.jpg"
+   },
+   {
+    "n": 2,
+    "in": 2.3,
+    "out": 7.4,
+    "dur": 5.1,
+    "frame": "shots/v1_s02.jpg"
+   },
+   {
+    "n": 3,
+    "in": 7.4,
+    "out": 14.7,
+    "dur": 7.3,
+    "frame": "shots/v1_s03.jpg"
+   },
+   {
+    "n": 4,
+    "in": 14.7,
+    "out": 22.0,
+    "dur": 7.3,
+    "frame": "shots/v1_s04.jpg"
+   },
+   {
+    "n": 5,
+    "in": 22.0,
+    "out": 29.4,
+    "dur": 7.4,
+    "frame": "shots/v1_s05.jpg"
+   },
+   {
+    "n": 6,
+    "in": 29.4,
+    "out": 36.7,
+    "dur": 7.3,
+    "frame": "shots/v1_s06.jpg"
+   },
+   {
+    "n": 7,
+    "in": 36.7,
+    "out": 39.7,
+    "dur": 3.0,
+    "frame": "shots/v1_s07.jpg"
+   },
+   {
+    "n": 8,
+    "in": 39.7,
+    "out": 45.3,
+    "dur": 5.6,
+    "frame": "shots/v1_s08.jpg"
+   },
+   {
+    "n": 9,
+    "in": 45.3,
+    "out": 52.6,
+    "dur": 7.3,
+    "frame": "shots/v1_s09.jpg"
+   },
+   {
+    "n": 10,
+    "in": 52.6,
+    "out": 59.4,
+    "dur": 6.8,
+    "frame": "shots/v1_s10.jpg"
+   },
+   {
+    "n": 11,
+    "in": 59.4,
+    "out": 63.93,
+    "dur": 4.53,
+    "frame": "shots/v1_s11.jpg"
+   }
+  ]
+ },
+ "v2": {
+  "file": "67ba36cb-Jogada_Esportiva_1033073952674458_20260904_1.mp4",
+  "dur": 82.2,
+  "shots": [
+   {
+    "n": 1,
+    "in": 0.0,
+    "out": 1.6,
+    "dur": 1.6,
+    "frame": "shots/v2_s01.jpg"
+   },
+   {
+    "n": 2,
+    "in": 1.6,
+    "out": 3.0,
+    "dur": 1.4,
+    "frame": "shots/v2_s02.jpg"
+   },
+   {
+    "n": 3,
+    "in": 3.0,
+    "out": 8.4,
+    "dur": 5.4,
+    "frame": "shots/v2_s03.jpg"
+   },
+   {
+    "n": 4,
+    "in": 8.4,
+    "out": 11.3,
+    "dur": 2.9,
+    "frame": "shots/v2_s04.jpg"
+   },
+   {
+    "n": 5,
+    "in": 11.3,
+    "out": 18.5,
+    "dur": 7.2,
+    "frame": "shots/v2_s05.jpg"
+   },
+   {
+    "n": 6,
+    "in": 18.5,
+    "out": 21.0,
+    "dur": 2.5,
+    "frame": "shots/v2_s06.jpg"
+   },
+   {
+    "n": 7,
+    "in": 21.0,
+    "out": 25.6,
+    "dur": 4.6,
+    "frame": "shots/v2_s07.jpg"
+   },
+   {
+    "n": 8,
+    "in": 25.6,
+    "out": 32.4,
+    "dur": 6.8,
+    "frame": "shots/v2_s08.jpg"
+   },
+   {
+    "n": 9,
+    "in": 32.4,
+    "out": 36.0,
+    "dur": 3.6,
+    "frame": "shots/v2_s09.jpg"
+   },
+   {
+    "n": 10,
+    "in": 36.0,
+    "out": 40.1,
+    "dur": 4.1,
+    "frame": "shots/v2_s10.jpg"
+   },
+   {
+    "n": 11,
+    "in": 40.1,
+    "out": 47.4,
+    "dur": 7.3,
+    "frame": "shots/v2_s11.jpg"
+   },
+   {
+    "n": 12,
+    "in": 47.4,
+    "out": 68.0,
+    "dur": 20.6,
+    "frame": "shots/v2_s12.jpg"
+   },
+   {
+    "n": 13,
+    "in": 68.0,
+    "out": 72.1,
+    "dur": 4.1,
+    "frame": "shots/v2_s13.jpg"
+   },
+   {
+    "n": 14,
+    "in": 72.1,
+    "out": 76.6,
+    "dur": 4.5,
+    "frame": "shots/v2_s14.jpg"
+   },
+   {
+    "n": 15,
+    "in": 76.6,
+    "out": 82.2,
+    "dur": 5.6,
+    "frame": "shots/v2_s15.jpg"
+   }
+  ]
+ },
+ "v3": {
+  "file": "af54459b-Jogada_Esportiva_2489303478247059_20260904.mp4",
+  "dur": 44.9,
+  "shots": [
+   {
+    "n": 1,
+    "in": 0.0,
+    "out": 8.1,
+    "dur": 8.1,
+    "frame": "shots/v3_s01.jpg"
+   },
+   {
+    "n": 2,
+    "in": 8.1,
+    "out": 16.1,
+    "dur": 8.0,
+    "frame": "shots/v3_s02.jpg"
+   },
+   {
+    "n": 3,
+    "in": 16.1,
+    "out": 31.0,
+    "dur": 14.9,
+    "frame": "shots/v3_s03.jpg"
+   },
+   {
+    "n": 4,
+    "in": 31.0,
+    "out": 39.1,
+    "dur": 8.1,
+    "frame": "shots/v3_s04.jpg"
+   },
+   {
+    "n": 5,
+    "in": 39.1,
+    "out": 44.93,
+    "dur": 5.83,
+    "frame": "shots/v3_s05.jpg"
+   }
+  ]
+ },
+ "v4": {
+  "file": "dfd0854d-Jogada_Esportiva_2130810507785665_20260904.mp4",
+  "dur": 63.4,
+  "shots": [
+   {
+    "n": 1,
+    "in": 0.0,
+    "out": 16.4,
+    "dur": 16.4,
+    "frame": "shots/v4_s01.jpg"
+   },
+   {
+    "n": 2,
+    "in": 16.4,
+    "out": 22.5,
+    "dur": 6.1,
+    "frame": "shots/v4_s02.jpg"
+   },
+   {
+    "n": 3,
+    "in": 22.5,
+    "out": 28.3,
+    "dur": 5.8,
+    "frame": "shots/v4_s03.jpg"
+   },
+   {
+    "n": 4,
+    "in": 28.3,
+    "out": 36.3,
+    "dur": 8.0,
+    "frame": "shots/v4_s04.jpg"
+   },
+   {
+    "n": 5,
+    "in": 36.3,
+    "out": 43.4,
+    "dur": 7.1,
+    "frame": "shots/v4_s05.jpg"
+   },
+   {
+    "n": 6,
+    "in": 43.4,
+    "out": 58.4,
+    "dur": 15.0,
+    "frame": "shots/v4_s06.jpg"
+   },
+   {
+    "n": 7,
+    "in": 58.4,
+    "out": 62.9,
+    "dur": 4.5,
+    "frame": "shots/v4_s07.jpg"
+   },
+   {
+    "n": 8,
+    "in": 62.9,
+    "out": 63.43,
+    "dur": 0.53,
+    "frame": "shots/v4_s08.jpg"
+   }
+  ]
+ },
+ "v5": {
+  "file": "e7826555-Jogada_Esportiva_1962066217844164_20260904.mp4",
+  "dur": 67.7,
+  "shots": [
+   {
+    "n": 1,
+    "in": 0.0,
+    "out": 3.0,
+    "dur": 3.0,
+    "frame": "shots/v5_s01.jpg"
+   },
+   {
+    "n": 2,
+    "in": 3.0,
+    "out": 5.4,
+    "dur": 2.4,
+    "frame": "shots/v5_s02.jpg"
+   },
+   {
+    "n": 3,
+    "in": 5.4,
+    "out": 12.0,
+    "dur": 6.6,
+    "frame": "shots/v5_s03.jpg"
+   },
+   {
+    "n": 4,
+    "in": 12.0,
+    "out": 16.2,
+    "dur": 4.2,
+    "frame": "shots/v5_s04.jpg"
+   },
+   {
+    "n": 5,
+    "in": 16.2,
+    "out": 18.4,
+    "dur": 2.2,
+    "frame": "shots/v5_s05.jpg"
+   },
+   {
+    "n": 6,
+    "in": 18.4,
+    "out": 22.3,
+    "dur": 3.9,
+    "frame": "shots/v5_s06.jpg"
+   },
+   {
+    "n": 7,
+    "in": 22.3,
+    "out": 27.4,
+    "dur": 5.1,
+    "frame": "shots/v5_s07.jpg"
+   },
+   {
+    "n": 8,
+    "in": 27.4,
+    "out": 30.8,
+    "dur": 3.4,
+    "frame": "shots/v5_s08.jpg"
+   },
+   {
+    "n": 9,
+    "in": 30.8,
+    "out": 34.6,
+    "dur": 3.8,
+    "frame": "shots/v5_s09.jpg"
+   },
+   {
+    "n": 10,
+    "in": 34.6,
+    "out": 39.3,
+    "dur": 4.7,
+    "frame": "shots/v5_s10.jpg"
+   },
+   {
+    "n": 11,
+    "in": 39.3,
+    "out": 53.5,
+    "dur": 14.2,
+    "frame": "shots/v5_s11.jpg"
+   },
+   {
+    "n": 12,
+    "in": 53.5,
+    "out": 56.5,
+    "dur": 3.0,
+    "frame": "shots/v5_s12.jpg"
+   },
+   {
+    "n": 13,
+    "in": 56.5,
+    "out": 67.73,
+    "dur": 11.23,
+    "frame": "shots/v5_s13.jpg"
+   }
+  ]
+ }
+}
