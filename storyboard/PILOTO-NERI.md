@@ -98,10 +98,10 @@ keyframe anterior como referência extra.
 |---|---|---|
 | P1 | Zezão | "Mais um mês que não fecha." |
 | P2 | — | (só ambiente) |
-| P3 | Marão | "Ô Zezão, senta aqui. Cê ainda tá chutando jogo sozinho?" |
+| P3 | Marão | "Ó isso aqui, Zezão. Cê ainda tá chutando sozinho?" |
 | P3 | Zezão | "Tô. Por quê?" |
 | P4 | Marão | "Parei com isso, irmão. Tô no grupo do Neri. Ele manda análise, não chute." |
-| P5 | Marão | "Ó, tá aqui. Grupo do Neri. E é de graça." |
+| P5 | Marão | "Ó, tô aqui. Grupo do Neri, e é de graça." |
 | P6 | — | (só ambiente) |
 | P7 | Zezão | "Vou entrar só pra dar uma olhada." |
 | P8 | Zezão | "Não acredito… deu certinho como ele falou." |
