@@ -1,0 +1,20 @@
+{
+  "titulo": "O servente que não fechava o mês",
+  "tipster": "NERI TIPSTER",
+  "gancho": "ELE NÃO FECHAVA O MÊS",
+  "acento": "#ffd400",
+  "capa": "neri-tipster.jpg",
+  "cta": "ENTRA NO GRUPO — LINK NA BIO",
+  "conformidade": "MINISTÉRIO DA FAZENDA ADVERTE: APOSTA NÃO É INVESTIMENTO. Jogue com responsabilidade. Proibido para menores de 18 anos.",
+  "planos": [
+    {"n": 1, "clipe": "", "dur": 4.5, "legenda": "ELE NÃO FECHAVA O MÊS"},
+    {"n": 2, "clipe": "", "dur": 5.0, "legenda": "O DIA 5 CHEGANDO"},
+    {"n": 3, "clipe": "", "dur": 8.0, "legenda": "TÔ NO GRUPO DO NERI"},
+    {"n": 4, "clipe": "", "dur": 7.0, "legenda": "ELE MANDA ANÁLISE, NÃO CHUTE"},
+    {"n": 5, "clipe": "", "dur": 7.0, "legenda": "GRUPO DO NERI"},
+    {"n": 6, "clipe": "", "dur": 7.0, "legenda": "(prova social)"},
+    {"n": 7, "clipe": "", "dur": 7.0, "legenda": "VOU ENTRAR"},
+    {"n": 8, "clipe": "", "dur": 8.0, "legenda": "(euforia contida)"},
+    {"n": 9, "clipe": "", "dur": 5.0, "legenda": "ENTRA NO GRUPO — LINK NA BIO"}
+  ]
+}

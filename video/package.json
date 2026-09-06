@@ -4,10 +4,11 @@
   "description": "Player e composicoes Remotion para os videos verticais do storyboard",
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render Legenda out/legenda.mp4",
+    "render": "remotion render Historinha out/historinha.mp4",
     "preview": "vite",
     "build": "vite build",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prompts": "node scripts/gerar-prompts.mjs"
   },
   "keywords": [],
   "author": "",

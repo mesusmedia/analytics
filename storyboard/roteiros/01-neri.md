@@ -55,12 +55,12 @@
 
 **P5 · Contra-plano, celular ao centro**
 ```
-[STYLE_BLOCK], [SET_TELA_GRUPO], the phone held into frame between the two characters, the group header shows [CAPA_NERI] as the circular profile photo and the group name, green screen light on both faces, [SET_OBRA] shade blurred behind, 9:16
+[STYLE_BLOCK], [SET_TELA_GRUPO], the phone held into frame between the two characters, the header profile photo is [CAPA_NERI] and the group name reads "NERI TIPSTER" in clear white text, strong green screen light on both faces, cement bags and scaffolding blurred behind in the shade, harsh midday sun outside, 9:16
 ```
 
 **P6 · Detalhe do chat**
 ```
-[STYLE_BLOCK], macro close-up of a Telegram group chat on a phone screen, a pinned tip message from [CAPA_NERI] and a green check reaction below it, dark chat theme, timestamps visible, dusty fingers holding the phone, 9:16
+[STYLE_BLOCK], macro close-up of a Telegram group chat on a phone screen, a pinned tip message whose sender avatar is [CAPA_NERI] and a green check reaction below it, dark chat theme, timestamps visible, dusty fingers holding the phone, 9:16
 ```
 
 **P7 · Médio na quitinete**
@@ -75,7 +75,7 @@
 
 **P9 · Pack shot**
 ```
-[STYLE_BLOCK], dramatic dark green product shot, a smartphone floating at a slight angle showing the [CAPA_NERI] group cover and the group name, surrounded by floating footballs and basketballs, glowing green check marks and coin particles, green light streaks, dark textured green-black background, 9:16
+[STYLE_BLOCK], dramatic dark green product shot, a smartphone floating at a slight angle showing [CAPA_NERI] as the group cover with the group name "NERI TIPSTER" below it, surrounded by floating footballs and basketballs, glowing green check marks and coin particles, green light streaks, dark textured green-black background, 9:16
 ```
 
 ## Prompts de animação
@@ -91,6 +91,35 @@
 | 7 | `slow push-in, he taps the join button, the screen light brightens on his face, the ceiling fan turns above` | 7s |
 | 8 | `handheld, a notification slides in, his eyes widen and he sits up straight, green light flares` | 8s |
 | 9 | `the phone rotates slowly in 3D, balls and check marks drift past, green light streaks sweep across` | 5s |
+
+## Falas
+
+Plano com fala carrega a encenação inteira aqui. O gerador de prompts monta a
+diretiva de idioma em cima disto e ignora o movimento seco da tabela.
+
+**Fala P3**
+```
+Handheld two-shot. Both men are already sitting in the shade on stacks of cement
+bags. The older man in the orange safety helmet, on the right, turns the phone
+toward the younger man and grins.
+
+He says: "Ó isso aqui, Zezão. Cê ainda tá chutando sozinho?"
+The younger man on the left raises his eyebrows and answers: "Tô. Por quê?"
+
+Natural lip sync. Ambient construction site sound, no music. 9:16 vertical.
+```
+
+**Fala P5**
+```
+Static shot. The phone is raised into frame between the two men, the group chat
+screen fills the centre of the composition and casts green light on both faces.
+
+Only the older man in the orange safety helmet speaks. He says:
+"Ó, tô aqui. Grupo do Neri, e é de graça."
+
+The younger man stays silent, eyes widening as he reads the screen.
+Natural lip sync. Ambient construction site sound, no music. 9:16 vertical.
+```
 
 ## Conformidade
 
