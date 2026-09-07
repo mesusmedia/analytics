@@ -48,7 +48,13 @@ const ordem = parada >= 0 ? etapas.slice(0, parada + 1) : etapas;
 for (const etapa of ordem) {
   console.log(`\n━━ ${etapa.nome} ━━`);
   const [bin, args] = etapa.cmd;
-  const r = spawnSync(bin, args, {cwd: VIDEO, stdio: 'inherit', env: process.env});
+  // No Windows `npx` e um .cmd, e spawn sem shell nao acha shim: da ENOENT.
+  const r = spawnSync(bin, args, {
+    cwd: VIDEO,
+    stdio: 'inherit',
+    env: process.env,
+    shell: process.platform === 'win32',
+  });
   if (r.status !== 0) {
     console.error(`\nParou em "${etapa.nome}" (código ${r.status}). Nada depois disso rodou.\n`);
     process.exit(r.status ?? 1);
