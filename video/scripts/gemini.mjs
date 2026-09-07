@@ -96,5 +96,7 @@ export {chamar, nome as nomeDoModelo, metodos as metodosDoModelo};
 /** Erro de operação é para o operador ler, não para virar stack trace. */
 export function encerrarComErro(e) {
   console.error(`\n${e.message}\n`);
-  process.exit(1);
+  // exitCode em vez de exit(): no Windows, sair com stdout ainda drenando
+  // dispara "Assertion failed: !(handle->flags & UV_HANDLE_CLOSING)" no libuv.
+  process.exitCode = 1;
 }
