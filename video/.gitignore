@@ -2,3 +2,6 @@ node_modules/
 dist/
 out/
 .remotion/
+.env
+public/keyframes/
+public/clipes/

@@ -8,7 +8,12 @@
     "preview": "vite",
     "build": "vite build",
     "typecheck": "tsc",
-    "prompts": "node scripts/gerar-prompts.mjs"
+    "prompts": "node scripts/gerar-prompts.mjs",
+    "modelos": "node --env-file-if-exists=.env scripts/listar-modelos.mjs",
+    "keyframes": "node --env-file-if-exists=.env scripts/gerar-keyframes.mjs",
+    "clipes": "node --env-file-if-exists=.env scripts/gerar-clipes.mjs",
+    "vincular": "node scripts/vincular-clipes.mjs",
+    "peca": "node --env-file-if-exists=.env scripts/peca.mjs"
   },
   "keywords": [],
   "author": "",
