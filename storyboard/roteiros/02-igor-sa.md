@@ -21,7 +21,7 @@
 
 | # | TC | Plano | Ação | Legenda |
 |---|---|---|---|---|
-| 1 | 0.0–4.5 | Médio na barbearia | Wesley corta cabelo ouvindo papo de aposta | ELE OUVIA TODO MUNDO |
+| 1 | 0.0–4.5 | Médio na barbearia | Wesley corta o cabelo do Dr. Paulo, que fala sem parar | ELE OUVIA TODO MUNDO |
 | 2 | 4.5–9.5 | Detalhe do celular no balcão | Lista de apostas perdidas na tela | TODA SEMANA A MESMA COISA |
 | 3 | 9.5–17.5 | Dois personagens, cadeira | Dr. Paulo, na cadeira, cita o grupo | MEU FILHO, LARGA ESSE PALPITE DE MESA |
 | 4 | 17.5–24.5 | Close em Dr. Paulo | Ele explica quem é o Igor Sá | ELE POSTA A ANÁLISE ANTES |
@@ -30,6 +30,18 @@
 | 7 | 38.5–45.5 | Médio na calçada | Wesley fecha a loja e entra no grupo | DEIXA EU VER ISSO |
 | 8 | 45.5–53.5 | Close, luz da tela | Notificação chega; reação | (surpresa) |
 | 9 | 53.5–58.5 | Pack shot | Capa do grupo + chamada | ENTRA NO GRUPO — LINK NA BIO |
+
+## Falas
+
+| Plano | Quem | Fala |
+|---|---|---|
+| 1 | Dr. Paulo | "Aí eu botei no empate, e olha no que deu." |
+| 3 | Dr. Paulo | "Meu filho, larga esse palpite de mesa." |
+| 4 | Dr. Paulo | "Ele posta a análise antes. Dá tempo de pensar." |
+| 5 | Dr. Paulo | "Ó, tá aqui. IgorSaTips, e é de graça." |
+| 7 | Wesley | "Deixa eu ver isso direito." |
+| 8 | Wesley | "Não acredito. Deu certo." |
+| 9 | locução | "Grupo grátis do Igor Sá. Link na bio." |
 
 ## Prompts de keyframe
 
