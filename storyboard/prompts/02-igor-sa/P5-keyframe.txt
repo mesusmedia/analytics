@@ -3,15 +3,28 @@ surface, oversized expressive eyes with visible catchlights, thick dark eyebrows
 subtle skin pores and fabric weave, cinematic shallow depth of field, warm practical
 light sources, photoreal environment textures, vertical 9:16 composition.
 
-THE CLIENT is the older man: 52, light skin, greying temples, rimless glasses, neatly
-trimmed beard, wearing a white dress shirt under a black barber cape. He is SEATED in
-the barber chair on the LEFT of the frame. He wears NO apron.
+Two men inside a Brazilian barbershop, black leather barber chair, a large mirror with a warm bulb
+strip, a wooden counter with clippers and combs, a wall TV showing an NBA basketball
+game, hexagonal tiles, plants, warm amber light. Medium two-shot.
 
-THE BARBER is the young man: 29, brown skin, high fade haircut with a sharp line-up,
-thin moustache, small gold chain, black barber's apron over a white t-shirt, tattooed
-forearms. He is STANDING on the RIGHT of the frame, leaning in toward the seated man.
+LEFT OF FRAME, SEATED IN THE BARBER CHAIR: a man of 52 with grey hair, greying temples, rimless glasses and a neatly trimmed
+grey beard, a black hairdressing cape fastened around his neck covering his body.
+He wears NO apron. He is sitting, leaning back, holding
+a smartphone up in one hand and turning the screen toward the man beside him.
 
-The seated older man holds a smartphone up between them; the screen shows a Telegram
-group chat and casts strong green light on both faces. Brazilian barbershop behind
-them: large mirror with a warm bulb strip, a wall TV showing an NBA basketball game, plants,
-hexagonal tiles, warm amber light. Medium two-shot, 9:16
+RIGHT OF FRAME, STANDING UP: a man of 29 with brown skin, a high fade haircut with a sharp line-up, a thin
+moustache and a small gold chain, a black work apron over a white t-shirt, tattooed
+forearms. He is on his feet, clippers lowered, bent
+slightly at the waist to look at the screen, eyebrows raised.
+
+The phone screen fills the centre of the composition and shows a Telegram group chat
+with a dark theme: a pinned group header with a circular profile photo and the group
+name "IGORSATIPS GRÁTIS" in clear readable white text, message bubbles below with a
+green tick reaction. The screen is the brightest thing in the frame and casts strong
+green light on both faces.
+
+The group cover photo in the chat header is the attached image, composited exactly as
+provided. Do NOT redraw it, do NOT re-illustrate it, do NOT turn the person in it into
+a 3D character. It is a flat photograph shown inside a phone interface.
+
+9:16

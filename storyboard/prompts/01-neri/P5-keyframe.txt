@@ -1,13 +1,27 @@
 stylized 3D animation still, Pixar-like character rendering with soft clay/vinyl toy
 surface, oversized expressive eyes with visible catchlights, thick dark eyebrows,
 subtle skin pores and fabric weave, cinematic shallow depth of field, warm practical
-light sources, photoreal environment textures, vertical 9:16 composition,
-close-up of a smartphone screen showing a Telegram group chat, dark theme, held into
-frame between two men sitting in the shade of a Brazilian construction site, the
-pinned group header shows the attached Neri Tipster group cover image as a circular
-profile photo next to the group name "NERI TIPSTER" in clear readable white text, a
-stack of message bubbles below it with a green tick reaction, timestamps, the phone
-screen is the brightest thing in the frame and casts strong green light on both faces,
-the older man in the orange safety helmet on the right holds the phone, the younger
-man in the dusty grey t-shirt on the left leans in, cement bags and scaffolding
-blurred behind, harsh midday sun outside the shade, 9:16
+light sources, photoreal environment textures, vertical 9:16 composition.
+
+Two men sitting in the shade at a Brazilian construction site at midday, unfinished grey concrete block walls, exposed
+rebar, wooden scaffolding, a cement mixer, bags of cement stacked in the shade, harsh
+overhead sun, dust hanging in the light, hot bleached palette. Medium two-shot, framed closer.
+
+LEFT OF FRAME, SEATED: a man of 34 with dark brown skin, a shaved head under a faded grey cap, a thin
+moustache, a dusty grey t-shirt with a torn sleeve, worn jeans and cement dust on his
+forearms, broad shoulders. He leans in toward the phone, eyes widening.
+
+RIGHT OF FRAME, SEATED BESIDE HIM: a man of 45 with light brown skin, a thick grey-flecked beard, an orange safety
+helmet, blue work overalls open at the chest over a white tank top, round belly. He holds a smartphone up between them.
+
+The phone screen fills the centre of the composition and shows a Telegram group chat
+with a dark theme: a pinned group header with a circular profile photo and the group
+name "NERI TIPSTER" in clear readable white text, message bubbles below with a green
+tick reaction. The screen is the brightest thing in the frame and casts strong green
+light on both faces.
+
+The group cover photo in the chat header is the attached image, composited exactly as
+provided. Do NOT redraw it, do NOT re-illustrate it, do NOT turn the person in it into
+a 3D character. It is a flat photograph shown inside a phone interface.
+
+Cement bags and scaffolding blurred behind, 9:16

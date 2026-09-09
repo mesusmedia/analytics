@@ -1,1 +1,27 @@
-stylized 3D animation still, Pixar-like character rendering with soft clay/vinyl toy surface, oversized expressive eyes with visible catchlights, thick dark eyebrows, subtle skin pores and fabric weave, cinematic shallow depth of field, warm practical light sources, photoreal environment textures, vertical 9:16 composition, no text, no watermark, close-up of a smartphone screen showing a Telegram group chat, dark theme, a pinned group header with a circular profile photo and the group name, a stack of message bubbles with a green tick reaction, timestamps, the phone held in a hand, shallow depth of field, screen light on the fingers, the phone held into frame between the two characters, the group header shows the attached group cover image as the circular profile photo and the group name, green screen light on both faces, cozy modern living room at night, warm string fairy lights across the wall, brick fireplace, bookshelf with plants and framed photos, grey sofa with cushions and a plaid throw, large window with colourful city bokeh outside, golden ambient light blurred behind, 9:16
+stylized 3D animation still, Pixar-like character rendering with soft clay/vinyl toy
+surface, oversized expressive eyes with visible catchlights, thick dark eyebrows,
+subtle skin pores and fabric weave, cinematic shallow depth of field, warm practical
+light sources, photoreal environment textures, vertical 9:16 composition.
+
+Two people in a cosy modern living room at night, warm string fairy lights across the wall, a brick
+fireplace, a bookshelf with plants and framed photos, a grey sofa with cushions and a
+plaid throw, a large window with colourful city bokeh outside, golden ambient light, framed closer. Medium two-shot.
+
+LEFT OF FRAME, STANDING: a woman of 38 with light skin, straight dark hair in a low ponytail, arched
+eyebrows and an oversized grey knit sweater. She leans in toward the phone, arms beginning to
+uncross, eyes widening.
+
+RIGHT OF FRAME, STANDING: a man of 40 with light brown skin, dark wavy hair, a short beard, a navy polo shirt
+and reading glasses pushed up on his head. He holds a smartphone up between them.
+
+The phone screen fills the centre of the composition and shows a Telegram group chat
+with a dark theme: a pinned group header with a circular profile photo and the group
+name in clear readable white text, message bubbles below with a green tick reaction.
+The screen is the brightest thing in the frame and casts strong green light on both
+faces, colliding with the warm room light.
+
+The group cover photo in the chat header is the attached image, composited exactly as
+provided. Do NOT redraw it, do NOT re-illustrate it, do NOT turn the person in it into
+a 3D character. It is a flat photograph shown inside a phone interface.
+
+9:16
