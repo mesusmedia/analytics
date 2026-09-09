@@ -1,1 +1,11 @@
-static two-shot, the seated character raises the phone and talks, the barber leans in, lip sync
+Spoken language: Brazilian Portuguese (pt-BR). All dialogue must be in Brazilian
+Portuguese — never English.
+
+Static two-shot. The seated man in the black cape raises the phone slightly and
+speaks. The young man standing on the right lowers his clippers and listens without
+answering.
+
+Only the seated older man speaks. He says: "Meu filho, larga esse palpite de mesa."
+
+Natural lip sync on the seated man only. Ambient barbershop sound, a football match
+on the TV, no music. 9:16 vertical.
