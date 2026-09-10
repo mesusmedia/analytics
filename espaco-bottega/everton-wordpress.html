@@ -1,0 +1,393 @@
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '630328829518797');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=630328829518797&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'manrope': ['Manrope', 'sans-serif'],
+                },
+                colors: {
+                    'brand-dark': '#020617',
+                    'brand-accent': '#10b981', // Verde Esmeralda
+                    'brand-danger': '#ef4444', // Vermelho para destaque
+                    'brand-muted': '#1e293b',
+                },
+                animation: {
+                    'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    html { scroll-behavior: smooth; }
+    .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .text-gradient {
+        background: linear-gradient(to right, #ffffff, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .btn-glow {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: #000;
+        aspect-ratio: 9 / 16;
+    }
+    .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<div class="font-manrope bg-brand-dark text-gray-200 antialiased overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/95 to-brand-dark"></div>
+
+        <div class="container mx-auto px-4 relative z-10 max-w-5xl text-center">
+            <span class="inline-block px-4 py-1 rounded-full border border-brand-accent/30 text-brand-accent text-xs font-bold uppercase tracking-widest mb-6 bg-brand-accent/10">
+                Nutrição Esportiva • Porto Alegre
+            </span>
+            
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tighter text-white">
+                Consultoria com <span class="text-brand-accent italic">Nutricionista Esportivo</span> em Porto Alegre
+            </h1>
+            
+            <p class="text-xl md:text-2xl font-light text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                A estratégia certa para acelerar o seu metabolismo. Conheça o diagnóstico individualizado que <span class="text-brand-accent font-bold">reativa</span> as suas usinas naturais de queima de gordura e performance.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#depoimentos" class="btn-glow w-full md:w-auto bg-brand-accent text-brand-dark font-black py-5 px-12 rounded-2xl hover:bg-white hover:text-brand-dark transition-all duration-300 uppercase tracking-widest text-lg animate-pulse-slow">
+                    Quero Agendar Meu Diagnóstico
+                </a>
+            </div>
+
+            <div class="mt-16 flex flex-wrap justify-center gap-8 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2"><i class="fas fa-award"></i> <span class="text-[10px] font-bold uppercase tracking-widest">Ex-Atleta de Elite</span></div>
+                <div class="flex items-center gap-2"><i class="fas fa-flask"></i> <span class="text-[10px] font-bold uppercase tracking-widest">Especialista Metabólico</span></div>
+                <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> <span class="text-[10px] font-bold uppercase tracking-widest">Espaço Bottega POA</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROVA SOCIAL: ANTES E DEPOIS -->
+    <section class="py-20 bg-brand-dark/50 reveal">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <h2 class="text-3xl font-black mb-12 uppercase tracking-tighter text-gradient">Resultados de Quem Seguiu o Método</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2023/09/analista-financeira.jpg" alt="Antes e Depois" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2023/09/Shayane-500x500.jpeg" alt="Antes e Depois" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2023/09/luana-500x500.jpeg" alt="Antes e Depois" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2023/12/sergio_fialho.jpg" alt="Antes e Depois" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2022/10/1katia-500x500.jpg" alt="Antes e Depois" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2026/02/IMG_0968-scaled.jpg" alt="Transformação" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2026/02/IMG_1452.jpg" alt="Transformação" class="w-full h-auto" loading="lazy">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://espacobottega.com/wp-content/uploads/2026/02/cc9c760a-9231-4f2a-bed3-2e76bf4772ab.jpg" alt="Transformação" class="w-full h-auto" loading="lazy">
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="btn-glow inline-block bg-brand-accent text-brand-dark font-black py-4 px-10 rounded-xl hover:bg-white hover:text-brand-dark transition-all uppercase tracking-widest text-sm">
+                    Quero ter resultados assim
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORYTELLING (Ladeira Style) -->
+    <section class="py-24 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="reveal text-center">
+                <h2 class="text-3xl md:text-5xl font-black mb-12 leading-tight tracking-tighter uppercase">
+                    O que o seu nutricionista de <span class="text-brand-danger line-through italic">R$ 500</span> nunca te contou...
+                </h2>
+                
+                <div class="space-y-6 text-lg md:text-xl leading-relaxed text-gray-700 italic border-l-4 border-brand-accent pl-8 py-4 bg-gray-50 rounded-r-2xl text-left">
+                    <p>"Durante anos eu achei que o meu metabolismo estava permanentemente <span class="text-brand-danger font-bold">travado</span>. Nada funcionava. O espelho era o meu maior <span class="text-brand-danger font-bold">inimigo</span>."</p>
+                    <p>O problema não é falta de esforço. É falta de <span class="text-brand-accent font-bold underline">Sinalização</span>. Se as suas mitocôndrias estão "desligadas", você pode passar fome que o peso não desce.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 reveal">
+                <h3 class="text-2xl font-black mb-6 uppercase tracking-tight text-brand-accent italic text-center md:text-left">O Diferencial do Everton</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed text-lg text-left">
+                    Como nutricionista e ex atleta multicampeão de fisiculturismo, o Everton não entrega um <span class="text-brand-danger font-bold">"PDF de gaveta"</span>. Ele analisa o sinal químico do teu corpo. O diagnóstico identifica exatamente onde o teu metabolismo parou e como dar o "tranco" necessário para ele voltar a queimar energia.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <div class="bg-brand-dark text-white p-6 rounded-2xl flex items-start gap-4 shadow-xl">
+                        <i class="fas fa-microscope text-brand-accent text-2xl"></i>
+                        <span class="font-bold text-sm">Análise de Bioquímica e Hormonas</span>
+                    </div>
+                    <div class="bg-brand-dark text-white p-6 rounded-2xl flex items-start gap-4 shadow-xl">
+                        <i class="fas fa-utensils text-brand-accent text-2xl"></i>
+                        <span class="font-bold text-sm">Plano Adaptado ao Teu Gosto Real</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="inline-block bg-brand-dark text-brand-accent border border-brand-accent font-black py-4 px-10 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all uppercase tracking-widest text-sm shadow-lg">
+                        Quero destravar meu metabolismo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL: VÍDEOS (MP4) -->
+    <section id="depoimentos" class="py-24 bg-brand-muted/30 reveal">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl font-black text-center mb-16 uppercase tracking-tighter text-gradient">Depoimentos e Impacto</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="video-wrapper shadow-2xl border border-white/5">
+                    <video controls preload="none" playsinline>
+                        <source src="https://espacobottega.com/wp-content/uploads/2026/02/BLUME.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper shadow-2xl border border-white/5">
+                    <video controls preload="none" playsinline>
+                        <source src="https://espacobottega.com/wp-content/uploads/2026/02/DUDA.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper shadow-2xl border border-white/5">
+                    <video controls preload="none" playsinline>
+                        <source src="https://espacobottega.com/wp-content/uploads/2026/02/DUKA.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper shadow-2xl border border-white/5">
+                    <video controls preload="none" playsinline>
+                        <source src="https://espacobottega.com/wp-content/uploads/2026/02/JOSE.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="glass mt-12 p-10 flex flex-col items-center justify-center text-center rounded-3xl max-w-2xl mx-auto border border-brand-accent/20">
+                <i class="fab fa-whatsapp text-4xl text-brand-accent mb-4"></i>
+                <p class="font-bold text-xl mb-6 leading-tight text-white">Você pode ser o <span class="text-brand-accent">próximo</span> caso de sucesso.</p>
+                <a href="#diagnostico" class="bg-brand-accent text-brand-dark font-black py-4 px-12 rounded-xl uppercase text-sm tracking-widest hover:bg-white hover:text-brand-dark transition-all shadow-lg">Começar agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA DE DORES -->
+    <section class="py-24 bg-brand-dark reveal">
+        <div class="container mx-auto px-4 max-w-5xl text-center">
+            <h2 class="text-3xl font-black mb-16 uppercase tracking-tighter text-gradient">Este Diagnóstico é para si que:</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-12">
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-battery-empty text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Sente-se <span class="text-brand-danger">indisposto</span> para as atividades básicas do dia-a-dia.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-cookie-bite text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Sofre com <span class="text-brand-danger">ansiedade</span> e desconta tudo na comida.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-tshirt text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Quer escolher as suas roupas, e <span class="text-brand-danger">NÃO</span> deixar que elas a escolham.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-pills text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Não quer utilizar medicamentos <span class="text-brand-danger">perigosos</span> para emagrecer.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-chart-line text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Já tentou todas as <span class="text-brand-danger">dietas da moda</span> sem qualquer resultado.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:bg-brand-accent/5 transition-all">
+                    <i class="fas fa-user-friends text-brand-danger mb-4 text-2xl"></i>
+                    <p class="font-bold text-sm">Sente que a sua saúde e autoestima estão <span class="text-brand-danger">prejudicadas</span>.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="btn-glow inline-block bg-brand-accent text-brand-dark font-black py-4 px-10 rounded-xl hover:bg-white hover:text-brand-dark transition-all uppercase tracking-widest text-sm">
+                    Cansei de tentar sozinho, quero ajuda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O EVERTON -->
+    <section class="py-24 bg-white text-brand-dark reveal">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3">
+                    <img src="https://espacobottega.com/wp-content/uploads/2022/11/32img-everton-sobre.jpg" alt="Éverton Bottega" class="rounded-3xl shadow-2xl border-4 border-brand-accent/20" loading="lazy">
+                </div>
+                <div class="w-full md:w-2/3 text-left">
+                    <h2 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tighter leading-tight">Treinador e Nutricionista <br><span class="text-brand-accent italic">Éverton Bottega</span></h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed mb-8 text-sm md:text-base">
+                        <p>O Everton Bottega atua há mais de <strong>15 anos</strong> contribuindo com a transformação de centenas de pessoas. É nutricionista, educador físico e <strong>ex-atleta multicampeão de fisiculturismo</strong>, sendo hoje uma referência nacional na área da saúde e performance.</p>
+                        <p>Foi treinado pelos maiores nomes do mundo:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-brand-dark font-bold"><i class="fas fa-check text-brand-accent"></i> Anthony Robbins (Las Vegas e Londres)</li>
+                            <li class="flex items-center gap-2 text-brand-dark font-bold"><i class="fas fa-check text-brand-accent"></i> T. Harv Eker (Autor de "Os Segredos da Mente Milionária")</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="inline-block bg-brand-dark text-white font-black py-4 px-8 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all uppercase tracking-widest text-xs">
+                        Agendar conversa com o Everton
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O QUE INCLUI -->
+    <section class="py-24 bg-white text-brand-dark reveal">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">O Diagnóstico de 60 Minutos</h2>
+                <p class="text-lg text-gray-500 italic">Um plano de ação, não apenas uma consulta:</p>
+            </div>
+
+            <div class="space-y-4 mb-12 text-left">
+                <div class="flex items-center gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="bg-brand-accent text-brand-dark w-12 h-12 rounded-full flex items-center justify-center font-black flex-shrink-0">01</div>
+                    <p class="font-bold text-lg text-brand-dark italic underline decoration-brand-accent">Avaliação completa</p> <p class="font-medium text-gray-600">do histórico e rotina real;</p>
+                </div>
+                <div class="flex items-center gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="bg-brand-accent text-brand-dark w-12 h-12 rounded-full flex items-center justify-center font-black flex-shrink-0">02</div>
+                    <p class="font-bold text-lg text-brand-dark italic underline decoration-brand-accent">Análise profunda</p> <p class="font-medium text-gray-600">de exames de sangue;</p>
+                </div>
+                <div class="flex items-center gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="bg-brand-accent text-brand-dark w-12 h-12 rounded-full flex items-center justify-center font-black flex-shrink-0">03</div>
+                    <p class="font-bold text-lg text-brand-dark italic underline decoration-brand-accent">Planejamento Personalizado</p> <p class="font-medium text-gray-600">(sem passar fome);</p>
+                </div>
+                <div class="flex items-center gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="bg-brand-accent text-brand-dark w-12 h-12 rounded-full flex items-center justify-center font-black flex-shrink-0">04</div>
+                    <p class="font-bold text-lg text-brand-dark italic underline decoration-brand-accent">Treino Estratégico</p> <p class="font-medium text-gray-600">indicado para o seu perfil;</p>
+                </div>
+            </div>
+
+            <div class="text-center mb-16">
+                <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="inline-block border-2 border-brand-accent text-brand-accent font-black py-4 px-10 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all uppercase tracking-widest text-sm">
+                    Garantir este planejamento completo
+                </a>
+            </div>
+
+            <!-- OFERTA FINAL -->
+            <div id="diagnostico" class="bg-brand-dark text-white p-12 rounded-[3rem] text-center shadow-2xl relative overflow-hidden border border-brand-accent/20">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-3xl"></div>
+                
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-widest text-brand-accent italic">Garanta a Sua Vaga</h3>
+                <p class="text-brand-danger line-through mb-2 text-xl font-bold italic">De R$ 500,00</p>
+                <div class="flex flex-col items-center mb-8">
+                    <span class="text-7xl font-black text-white tracking-tighter">R$ 197,00</span>
+                    <span class="text-brand-danger font-bold mt-2 uppercase tracking-widest text-xs animate-pulse">⚠️ Vagas Limitadas para Diagnóstico Semanal</span>
+                </div>
+
+                <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="block bg-brand-accent text-brand-dark font-black py-6 rounded-2xl text-xl hover:bg-white hover:text-brand-dark transition-all duration-300 uppercase tracking-widest shadow-lg">
+                    Agendar Diagnóstico pelo WhatsApp
+                </a>
+                
+                <p class="mt-8 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+                    <i class="fas fa-shield-alt mr-2 text-brand-accent"></i> Porto Alegre - Próximo ao Shopping Iguatemi
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark py-12 border-t border-white/5 text-center">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-xl font-black uppercase text-brand-accent mb-4 italic text-center">Espaço Bottega</h2>
+            <p class="text-gray-600 text-sm max-w-md mx-auto mb-8 text-center">
+                Recupere o seu corpo e a sua autoestima com quem entende de performance e saúde real.
+            </p>
+            <div class="flex justify-center gap-6 text-gray-400 text-2xl">
+                <a href="#" class="hover:text-brand-accent transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="hover:text-brand-accent transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="mt-12 text-[10px] text-gray-800 uppercase tracking-widest text-center">© 2026 Nutricionista Everton. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Fixo -->
+    <a href="https://wa.me/+5551993411384?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20Consultoria%20Esportiva%20com%20Nutricionista%20%C3%89verton." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</div>
+
+<script>
+    function reveal() {
+        const reveals = document.querySelectorAll(".reveal");
+        reveals.forEach((element) => {
+            if (!element) return;
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add("active");
+            }
+        });
+    }
+    window.addEventListener("scroll", reveal);
+    // Chamar uma vez no carregamento para mostrar elementos já visíveis
+    window.addEventListener("load", reveal);
+    // Se o script entrar depois do load (comum no WordPress), roda na hora
+    reveal();
+</script>
