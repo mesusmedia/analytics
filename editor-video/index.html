@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor de Vídeo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fundo:#0B0B0F; --painel:#14141B; --linha:#242430;
+    --texto:#F2F2F5; --apagado:#8A8A99; --acento:#B8FF3C;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fundo);color:var(--texto);
+       font:14px/1.5 Inter,system-ui,sans-serif}
+  header{display:flex;align-items:center;gap:16px;padding:14px 20px;
+         border-bottom:1px solid var(--linha)}
+  header h1{font-size:15px;font-weight:800;margin:0;letter-spacing:-.2px}
+  header .tag{font-size:11px;color:var(--apagado);border:1px solid var(--linha);
+              padding:3px 8px;border-radius:999px}
+  .sumico{margin-left:auto;display:flex;gap:8px;align-items:center}
+
+  main{display:grid;grid-template-columns:280px 1fr 300px;gap:0;
+       height:calc(100vh - 57px)}
+  .coluna{overflow-y:auto;padding:16px}
+  .coluna.esq{border-right:1px solid var(--linha)}
+  .coluna.dir{border-left:1px solid var(--linha)}
+  .palco{display:flex;flex-direction:column;align-items:center;
+         justify-content:center;gap:14px;padding:16px;background:#08080B}
+
+  h2{font-size:11px;text-transform:uppercase;letter-spacing:.09em;
+     color:var(--apagado);margin:0 0 10px;font-weight:700}
+  .bloco{margin-bottom:24px}
+
+  canvas#tela{max-height:64vh;max-width:100%;border-radius:12px;
+              background:#000;box-shadow:0 12px 40px rgba(0,0,0,.55)}
+
+  .presets{display:grid;gap:8px}
+  .preset{display:block;width:100%;text-align:left;cursor:pointer;
+          background:var(--painel);border:1px solid var(--linha);
+          border-radius:10px;padding:10px 12px;color:var(--texto)}
+  .preset:hover{border-color:#3A3A4A}
+  .preset[aria-pressed="true"]{border-color:var(--acento);
+          box-shadow:inset 0 0 0 1px var(--acento)}
+  .preset .nome{font-weight:700;font-size:13px}
+  .preset .fam{font-size:10px;color:var(--acento);text-transform:uppercase;
+               letter-spacing:.08em;font-weight:700}
+  .preset .res{font-size:11px;color:var(--apagado);margin-top:3px}
+
+  label.campo{display:block;margin-bottom:12px}
+  label.campo span{display:block;font-size:11px;color:var(--apagado);
+                   margin-bottom:5px}
+  input[type=text],input[type=number],select,textarea{
+    width:100%;background:#0E0E14;border:1px solid var(--linha);
+    color:var(--texto);border-radius:8px;padding:8px 10px;font:inherit}
+  textarea{min-height:110px;resize:vertical;font-size:13px}
+  input[type=range]{width:100%;accent-color:var(--acento)}
+  input[type=color]{width:100%;height:34px;background:#0E0E14;
+                    border:1px solid var(--linha);border-radius:8px;padding:2px}
+
+  button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--linha);
+         background:var(--painel);color:var(--texto);padding:8px 14px}
+  button:hover{border-color:#3A3A4A}
+  button.principal{background:var(--acento);color:#0B0B0F;border-color:var(--acento);
+                   font-weight:700}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .linha-botoes{display:flex;gap:8px;flex-wrap:wrap}
+
+  .transporte{display:flex;align-items:center;gap:12px;width:100%;max-width:520px}
+  .transporte input[type=range]{flex:1}
+  .tempo{font-variant-numeric:tabular-nums;font-size:12px;color:var(--apagado);
+         min-width:92px;text-align:right}
+
+  .aviso{font-size:12px;color:var(--apagado);border:1px dashed var(--linha);
+         border-radius:8px;padding:10px}
+  .status{font-size:12px;color:var(--acento);min-height:18px}
+  .dupla{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Editor de Vídeo</h1>
+  <span class="tag" id="tagFormato">1080×1920</span>
+  <div class="sumico">
+    <select id="formato" style="width:auto"></select>
+    <button id="btnExportar" class="principal" disabled>Exportar</button>
+  </div>
+</header>
+
+<main>
+  <!-- ESQUERDA: presets -->
+  <section class="coluna esq">
+    <div class="bloco">
+      <h2>Presets</h2>
+      <div class="presets" id="listaPresets"></div>
+    </div>
+  </section>
+
+  <!-- CENTRO: palco -->
+  <section class="palco">
+    <canvas id="tela" width="1080" height="1920"></canvas>
+    <div class="transporte">
+      <button id="btnPlay" disabled>Play</button>
+      <input type="range" id="scrub" min="0" max="100" step="0.1" value="0" disabled>
+      <span class="tempo" id="tempo">0:00 / 0:00</span>
+    </div>
+    <div class="status" id="status"></div>
+  </section>
+
+  <!-- DIREITA: conteúdo e ajustes -->
+  <section class="coluna dir">
+    <div class="bloco">
+      <h2>Vídeo</h2>
+      <input type="file" id="arqVideo" accept="video/*">
+    </div>
+
+    <div class="bloco">
+      <h2>Legenda</h2>
+      <label class="campo">
+        <span>Cole o texto da fala, um SRT ou um JSON de palavras</span>
+        <textarea id="txtLegenda" placeholder="Isso aqui muda tudo no seu conteúdo. Presta atenção nos próximos dez segundos."></textarea>
+      </label>
+      <div class="linha-botoes">
+        <button id="btnAplicarTexto">Aplicar</button>
+        <label class="botao-arquivo">
+          <input type="file" id="arqSrt" accept=".srt,.vtt,.json" hidden>
+          <button type="button" id="btnImportar">Importar arquivo</button>
+        </label>
+        <button id="btnBaixarSrt">Baixar SRT</button>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h2>Ajuste fino</h2>
+      <label class="campo">
+        <span>Tamanho <b id="vTamanho"></b></span>
+        <input type="range" id="ajTamanho" min="30" max="180" step="2">
+      </label>
+      <label class="campo">
+        <span>Altura na tela <b id="vPosicao"></b></span>
+        <input type="range" id="ajPosicao" min="10" max="95" step="1">
+      </label>
+      <label class="campo">
+        <span>Palavras por bloco <b id="vGrupo"></b></span>
+        <input type="range" id="ajGrupo" min="1" max="8" step="1">
+      </label>
+      <div class="dupla">
+        <label class="campo">
+          <span>Cor do texto</span>
+          <input type="color" id="ajCor">
+        </label>
+        <label class="campo">
+          <span>Destaque</span>
+          <input type="color" id="ajDestaque">
+        </label>
+      </div>
+      <label class="campo">
+        <span>Etiqueta no topo</span>
+        <input type="text" id="ajEtiqueta" placeholder="@seuperfil">
+      </label>
+      <button id="btnReset">Voltar ao preset</button>
+    </div>
+
+    <div class="bloco">
+      <h2>Exportação</h2>
+      <p class="aviso">O export grava em tempo real: um vídeo de 30 s leva 30 s.
+      Sai em WebM, aceito por Reels, Shorts e TikTok.</p>
+    </div>
+  </section>
+</main>
+
+<video id="fonte" playsinline crossorigin="anonymous" style="display:none"></video>
+
+<script src="src/presets.js"></script>
+<script src="src/legenda.js"></script>
+<script src="src/render.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
