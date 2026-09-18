@@ -1,0 +1,320 @@
+<title>Biblioteca de Narrativas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root{--bg:#e8ebe3;--surface:#f6f8f2;--raised:#fdfefb;--ink:#161a13;--body:#333a2e;
+--muted:#6d7566;--faint:#9aa392;--line:#cdd3c3;--hair:#dde2d5;--glow:#0e8b45;
+--glow-soft:#d6f0e0;--marker:#9c7400;--marker-soft:#f6ecc9;--alert:#a33b21;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#0e110d;--surface:#161a14;--raised:#1c211a;--ink:#e9ede4;--body:#c3cbba;
+--muted:#8b9482;--faint:#5f6857;--line:#272e24;--hair:#20261e;--glow:#43e685;
+--glow-soft:#12301f;--marker:#f2c94c;--marker-soft:#2e2712;--alert:#e8825f;}}
+:root[data-theme="dark"]{--bg:#0e110d;--surface:#161a14;--raised:#1c211a;--ink:#e9ede4;
+--body:#c3cbba;--muted:#8b9482;--faint:#5f6857;--line:#272e24;--hair:#20261e;
+--glow:#43e685;--glow-soft:#12301f;--marker:#f2c94c;--marker-soft:#2e2712;--alert:#e8825f;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:"Newsreader",Georgia,serif;
+font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.ui{font-family:"Archivo",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--muted)}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:44px 0 30px}
+h1{font-size:clamp(30px,5.2vw,52px);line-height:.98;margin:12px 0 0;color:var(--ink);
+font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--glow)}
+.lede{margin:14px 0 0;max-width:64ch;font-size:17px}
+.tally{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;
+margin-top:22px;width:max-content}
+.tally div{padding:10px 18px;border-right:1px solid var(--line);text-align:center;background:var(--raised)}
+.tally div:last-child{border-right:0}
+.tally b{display:block;font-family:"Archivo",sans-serif;font-size:22px;color:var(--ink);
+font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.tally span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--muted)}
+/* persona */
+.personas{padding:46px 0 10px}
+.pgrid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:22px}
+.pcard{background:var(--surface);padding:17px}
+.pcard h4{margin:0 0 6px;font-size:14.5px;color:var(--ink);font-weight:700}
+.pcard .age{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--glow);
+letter-spacing:.1em;display:block;margin-bottom:8px}
+.pcard p{margin:0;font-size:14.5px;line-height:1.45}
+/* filtros */
+.filters{position:sticky;top:0;z-index:20;background:var(--surface);
+border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0}
+.fin{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.flab{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--faint);margin-right:2px}
+.chip{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;padding:5px 11px;
+border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer}
+.chip:hover{color:var(--ink);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.chip:focus-visible{outline:2px solid var(--glow);outline-offset:2px}
+.sep{width:1px;height:20px;background:var(--line);margin:0 4px}
+/* histórias */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+margin:28px 0 0}
+.story{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:16px}
+.story[hidden]{display:none!important}
+.story header{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:11px}
+.gid{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--glow);letter-spacing:.08em}
+.pers{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--faint);
+letter-spacing:.1em;text-transform:uppercase}
+.who{font-family:"Archivo",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.06em;
+color:var(--t);border:1px solid var(--t);border-radius:2px;padding:2px 6px}
+.story h3{font-family:"Archivo",sans-serif;font-size:18px;line-height:1.15;margin:0 0 7px;
+color:var(--ink);font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+.tit{margin:0 0 12px;font-size:14.5px;color:var(--muted)}
+details summary{list-style:none;cursor:pointer;font-family:"IBM Plex Mono",monospace;
+font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+display:flex;align-items:center;gap:6px;border-top:1px solid var(--hair);padding-top:11px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";color:var(--glow);font-size:13px}
+details[open] summary::before{content:"–"}
+details summary:hover{color:var(--ink)}
+ol.nar{list-style:none;margin:13px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+ol.nar li{display:grid;grid-template-columns:22px 1fr;gap:9px;align-items:start}
+.pn{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--glow);padding-top:4px}
+ol.nar p{margin:0;font-size:15px;line-height:1.4}
+.adapts{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.ad{border-left:2px solid var(--t);padding-left:11px}
+.ad b{font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.06em;color:var(--t)}
+.ad p{margin:3px 0 0;font-size:14px;line-height:1.4}
+.ad .cta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+.empty{padding:40px 0;text-align:center;color:var(--muted);font-size:15px}
+/* matriz */
+.matriz{background:var(--surface);border-top:1px solid var(--line);margin-top:60px;
+padding:50px 0 58px}
+.tblwrap{overflow-x:auto;margin-top:24px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--surface)}
+th{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--faint);text-align:left;padding:10px 12px;
+border-bottom:1px solid var(--line);font-weight:500}
+td{padding:9px 12px;border-bottom:1px solid var(--hair);font-size:14.5px;vertical-align:top}
+.tp{font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;color:var(--t);white-space:nowrap}
+.num,.gid2{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+font-variant-numeric:tabular-nums}
+.hk{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;color:var(--ink)}
+.notes{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:34px}
+.notes h4{font-family:"Archivo",sans-serif;font-size:14.5px;color:var(--ink);margin:0 0 7px;font-weight:700}
+.notes p{margin:0;font-size:15px}
+.warn{border-left:2px solid var(--alert);padding-left:14px}
+.warn h4{color:var(--alert)}
+footer{padding:26px 0 56px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+color:var(--faint);letter-spacing:.05em;line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top"><div class="wrap">
+<div class="eyebrow">20 narrativas · 30 peças · narração em off</div>
+<h1>Vinte histórias, três nomes, <em>trinta peças</em></h1>
+<p class="lede">Cada narrativa é um pequeno filme de sete planos, todos mudos, com a narração entrando por cima na montagem. Trocando três coisas — a linha que nomeia o grupo, o CTA e a cor da legenda — a mesma história vira a peça de outro tipster, reaproveitando os keyframes.</p>
+<div class="tally">
+<div><b>20</b><span>narrativas</span></div>
+<div><b>30</b><span>peças</span></div>
+<div><b>10</b><span>reaproveitadas</span></div>
+<div><b>~56s</b><span>cada</span></div>
+</div>
+</div></header>
+
+<section class="personas"><div class="wrap">
+<div class="eyebrow">Quem assiste</div>
+<h2 style="font-size:clamp(22px,3vw,32px);margin:8px 0 0;color:var(--ink);font-weight:800;letter-spacing:-.02em">Quatro perfis, um mesmo aperto</h2>
+<div class="pgrid">
+<div class="pcard"><h4>Motoboy e motorista de app</h4><span class="age">ganho diário variável</span><p>Vive de meta e de semana boa contra semana ruim. Celular na mão por profissão. Consome de pé, entre uma corrida e outra.</p></div>
+<div class="pcard"><h4>CLT jovem</h4><span class="age">20 a 35 anos</span><p>Salário fixo sem margem. Sabe a data do vencimento de cor. Loja, obra, portaria, call center. Domingo à noite é inimigo.</p></div>
+<div class="pcard"><h4>Aspirante a lifestyle</h4><span class="age">25 a 40 anos</span><p>Não quer ficar rico amanhã — quer parar de sentir que ficou pra trás. Salva print, segue quem parece ter chegado.</p></div>
+<div class="pcard"><h4>Pequeno empresário e autônomo</h4><span class="age">30 a 45 anos</span><p>Lanchonete, barbearia, oficina, estrada. Cabeça de fluxo de caixa. Desconfia de tudo e testa quase tudo.</p></div>
+</div>
+</div></section>
+
+<div class="filters"><div class="wrap"><div class="fin">
+<span class="flab">Tipster</span>
+<button class="chip" data-f="t" data-v="" aria-pressed="true">Todos</button>
+<button class="chip" data-f="t" data-v="NERI" aria-pressed="false">Neri</button>
+<button class="chip" data-f="t" data-v="IGOR SÁ" aria-pressed="false">Igor Sá</button>
+<button class="chip" data-f="t" data-v="THIERRY" aria-pressed="false">Thierry</button>
+<span class="sep"></span>
+<span class="flab">Persona</span>
+<button class="chip" data-f="p" data-v="" aria-pressed="true">Todas</button>
+<button class="chip" data-f="p" data-v="Autônomo" aria-pressed="false">Autônomo</button><button class="chip" data-f="p" data-v="CLT" aria-pressed="false">CLT</button><button class="chip" data-f="p" data-v="CLT jovem" aria-pressed="false">CLT jovem</button><button class="chip" data-f="p" data-v="Empresário" aria-pressed="false">Empresário</button><button class="chip" data-f="p" data-v="Jovem 20-25" aria-pressed="false">Jovem 20-25</button><button class="chip" data-f="p" data-v="Lifestyle" aria-pressed="false">Lifestyle</button><button class="chip" data-f="p" data-v="Motoboy" aria-pressed="false">Motoboy</button><button class="chip" data-f="p" data-v="Motorista de app" aria-pressed="false">Motorista de app</button><button class="chip" data-f="p" data-v="Pequeno empresário" aria-pressed="false">Pequeno empresário</button><button class="chip" data-f="p" data-v="Reversão" aria-pressed="false">Reversão</button>
+</div></div></div>
+
+<div class="wrap"><div class="grid" id="grid"><article class="story" data-p="Motoboy" data-t="NERI|THIERRY">
+<header><span class="gid">G01</span><span class="pers">Motoboy</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE NÃO IA ACEITAR A CORRIDA</h3>
+<p class="tit">A entrega das duas da manhã · rua na chuva → quarto</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Duas da manhã. Eu já tinha desligado o app.</p></li><li><span class="pn">2</span><p>Aceitei porque era perto. Foi o que eu disse pra mim mesmo.</p></li><li><span class="pn">3</span><p>O cara desceu de chinelo, com o celular na mão, rindo sozinho.</p></li><li><span class="pn">4</span><p>Perguntei o que era. Ele virou a tela pra mim.</p></li><li><span class="pn">5</span><p>Um grupo. De graça. Ele falou que só acompanha, não chuta.</p></li><li><span class="pn">6</span><p>Voltei pra casa pensando naquilo. Entrei só pra olhar.</p></li><li><span class="pn">7</span><p>Todo mundo diz que entrou só pra olhar.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT jovem" data-t="NERI">
+<header><span class="gid">G02</span><span class="pers">CLT jovem</span><span class="who" style="--t:#d9a520">NERI</span></header>
+<h3>ELE VENDIA O QUE NUNCA IA TER</h3>
+<p class="tit">O vendedor do mostruário · loja → ponto de ônibus</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Oito horas por dia vendendo relógio que eu não consigo comprar.</p></li><li><span class="pn">2</span><p>O cliente experimenta, eu sorrio, ele leva. Todo dia.</p></li><li><span class="pn">3</span><p>Meu colega de balcão parou de reclamar faz um mês.</p></li><li><span class="pn">4</span><p>Eu perguntei o que tinha mudado. Ele só mostrou o celular.</p></li><li><span class="pn">5</span><p>Grupo de análise. Sem promessa, sem grito, sem taxa.</p></li><li><span class="pn">6</span><p>Esperei o ônibus e entrei ali mesmo, em pé.</p></li><li><span class="pn">7</span><p>Foi a primeira coisa em muito tempo que eu não precisei vender pra ninguém.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Motorista de app" data-t="IGOR SÁ|THIERRY">
+<header><span class="gid">G03</span><span class="pers">Motorista de app</span><span class="who" style="--t:#e2543c">IGOR SÁ</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE RODOU 12 HORAS E NÃO DEU</h3>
+<p class="tit">Doze horas de rua · carro à noite → posto</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Doze horas. Desconta gasolina, desconta app, desconta almoço.</p></li><li><span class="pn">2</span><p>Sobrou o suficiente pra encher o tanque e começar de novo amanhã.</p></li><li><span class="pn">3</span><p>O último passageiro entrou falando de jogo, como todo mundo.</p></li><li><span class="pn">4</span><p>Só que ele não falava de sorte. Falava de análise.</p></li><li><span class="pn">5</span><p>Mostrou um grupo no celular. Disse que é grátis e que ele só acompanha.</p></li><li><span class="pn">6</span><p>Parei no posto e li tudo antes de ligar o carro de novo.</p></li><li><span class="pn">7</span><p>Não mudou meu dia. Mudou o que eu faço no intervalo dele.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT jovem" data-t="NERI|THIERRY">
+<header><span class="gid">G04</span><span class="pers">CLT jovem</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE ODIAVA DOMINGO À NOITE</h3>
+<p class="tit">A segunda-feira dele · quarto domingo → trabalho</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Domingo, nove da noite. A pior hora da semana.</p></li><li><span class="pn">2</span><p>Não é o trabalho. É saber exatamente como vai ser a semana inteira.</p></li><li><span class="pn">3</span><p>Segunda de manhã meu colega chegou de bom humor. Suspeito.</p></li><li><span class="pn">4</span><p>Ele acompanha um grupo. Análise de jogo, antes da rodada.</p></li><li><span class="pn">5</span><p>Falou que é grátis e que o cara posta cedo, dá tempo de pensar.</p></li><li><span class="pn">6</span><p>Entrei no intervalo do almoço, na escada de serviço.</p></li><li><span class="pn">7</span><p>Continuo odiando domingo à noite. Mas agora tenho o que ler.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Lifestyle" data-t="IGOR SÁ">
+<header><span class="gid">G05</span><span class="pers">Lifestyle</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>ELE SÓ VIA A VIDA DOS OUTROS</h3>
+<p class="tit">O story do amigo · sofá → bar</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Eu passava uma hora por dia vendo a vida dos outros.</p></li><li><span class="pn">2</span><p>Praia, restaurante, carro novo. Tudo na tela de quinze centímetros.</p></li><li><span class="pn">3</span><p>Encontrei um desses caras pessoalmente. Perguntei na cara dura.</p></li><li><span class="pn">4</span><p>Ele riu. Falou que não tem segredo nenhum e me mostrou o celular.</p></li><li><span class="pn">5</span><p>Um grupo que ele acompanha. De graça. Análise antes do jogo.</p></li><li><span class="pn">6</span><p>Saí de lá e entrei no mesmo grupo, no Uber de volta.</p></li><li><span class="pn">7</span><p>Continuo vendo story. Só que agora eu sei o que tem atrás de alguns.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Pequeno empresário" data-t="NERI">
+<header><span class="gid">G06</span><span class="pers">Pequeno empresário</span><span class="who" style="--t:#d9a520">NERI</span></header>
+<h3>A CONTA DE LUZ CHEGOU PRIMEIRO</h3>
+<p class="tit">A conta da lanchonete · lanchonete → depósito</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>A luz da lanchonete vem antes do movimento do mês.</p></li><li><span class="pn">2</span><p>Todo comerciante conhece essa corrida de um contra o outro.</p></li><li><span class="pn">3</span><p>O rapaz da distribuidora entregou o pedido e ficou mexendo no celular.</p></li><li><span class="pn">4</span><p>Perguntei se era pedido. Ele disse que era grupo de análise de jogo.</p></li><li><span class="pn">5</span><p>De graça. Postam cedo, com o motivo. Ele só acompanha.</p></li><li><span class="pn">6</span><p>Li tudo sentado no depósito, entre as caixas.</p></li><li><span class="pn">7</span><p>Gostei porque tinha método. É a única coisa que eu respeito.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT" data-t="THIERRY">
+<header><span class="gid">G07</span><span class="pers">CLT</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>SETE HORAS OLHANDO UM CORREDOR VAZIO</h3>
+<p class="tit">O turno da madrugada · shopping vazio → ônibus</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Sete horas olhando um corredor que ninguém atravessa.</p></li><li><span class="pn">2</span><p>A madrugada não passa. Ela fica parada esperando você.</p></li><li><span class="pn">3</span><p>Meu par de ronda descobriu um jeito de encher esse tempo.</p></li><li><span class="pn">4</span><p>Um grupo de análise. Ele lê, compara, decide com calma.</p></li><li><span class="pn">5</span><p>É grátis. Ele disse que o que mudou foi ter o que estudar.</p></li><li><span class="pn">6</span><p>Entrei no ônibus das cinco da manhã, com o celular no colo.</p></li><li><span class="pn">7</span><p>A madrugada continua longa. Só não é mais vazia.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT" data-t="NERI|THIERRY">
+<header><span class="gid">G08</span><span class="pers">CLT</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE VIU O ANIVERSÁRIO DO FILHO POR VÍDEO</h3>
+<p class="tit">O aniversário que ele perdeu · obra → casa</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Eu vi o aniversário do meu filho por chamada de vídeo.</p></li><li><span class="pn">2</span><p>Hora extra de sábado paga o bolo. Alguém tinha que fazer.</p></li><li><span class="pn">3</span><p>Meu colega me passou o celular no intervalo, sem eu pedir.</p></li><li><span class="pn">4</span><p>Um grupo. Análise antes do jogo, sem promessa nenhuma.</p></li><li><span class="pn">5</span><p>Grátis. Ele falou: pelo menos você decide com informação.</p></li><li><span class="pn">6</span><p>Cheguei em casa, o bolo tinha acabado, e eu entrei no grupo.</p></li><li><span class="pn">7</span><p>Não recupera o sábado. Mas eu parei de apostar no escuro.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Jovem 20-25" data-t="IGOR SÁ">
+<header><span class="gid">G09</span><span class="pers">Jovem 20-25</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>O IRMÃO MAIS NOVO ZOAVA ELE</h3>
+<p class="tit">O irmão mais novo · sala de casa</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Meu irmão tem dez anos a menos que eu e me zoa desde sempre.</p></li><li><span class="pn">2</span><p>Dessa vez foi porque eu chutei um jogo inteiro no domingo.</p></li><li><span class="pn">3</span><p>Ele sentou do lado, pegou meu celular e abriu um grupo.</p></li><li><span class="pn">4</span><p>Falou: para de chutar, cara. Lê a análise antes.</p></li><li><span class="pn">5</span><p>É de graça. Postam cedo. Ele acompanha faz meses.</p></li><li><span class="pn">6</span><p>Fiquei com raiva porque ele tinha razão.</p></li><li><span class="pn">7</span><p>Entrei no grupo e não contei pra ele. Ele descobriu, claro.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT" data-t="NERI|THIERRY">
+<header><span class="gid">G10</span><span class="pers">CLT</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>O BOLÃO DO TRABALHO NUNCA DAVA</h3>
+<p class="tit">O bolão do trabalho · copa da empresa</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Todo mundo no bolão da empresa. Todo mundo errando junto.</p></li><li><span class="pn">2</span><p>Chutar em grupo não é análise. É ter companhia no erro.</p></li><li><span class="pn">3</span><p>Um cara parou de entrar no bolão e ninguém entendeu.</p></li><li><span class="pn">4</span><p>Ele me mostrou: acompanha um grupo com análise antes da rodada.</p></li><li><span class="pn">5</span><p>De graça. Disse que prefere ler do que apostar no palpite da mesa.</p></li><li><span class="pn">6</span><p>Entrei na copa da empresa, no intervalo do café.</p></li><li><span class="pn">7</span><p>Continuo no bolão. Só não é mais a única coisa que eu tenho.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Autônomo" data-t="IGOR SÁ">
+<header><span class="gid">G11</span><span class="pers">Autônomo</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>ELE TINHA 40 MINUTOS DE BURACO NA AGENDA</h3>
+<p class="tit">Entre um aluno e outro · academia vazia</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Quarenta minutos de buraco entre um aluno e outro.</p></li><li><span class="pn">2</span><p>Autônomo não tem intervalo. Tem tempo que não paga nada.</p></li><li><span class="pn">3</span><p>Um aluno meu ficou rindo do celular no meio da série.</p></li><li><span class="pn">4</span><p>Perguntei. Era um grupo de análise que ele acompanha.</p></li><li><span class="pn">5</span><p>Grátis. Postam cedo, com o raciocínio, não só o palpite.</p></li><li><span class="pn">6</span><p>Sentei no banco do supino e li tudo no meu buraco de agenda.</p></li><li><span class="pn">7</span><p>Pelo menos agora esses quarenta minutos servem pra alguma coisa.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Jovem 20-25" data-t="IGOR SÁ|THIERRY">
+<header><span class="gid">G12</span><span class="pers">Jovem 20-25</span><span class="who" style="--t:#e2543c">IGOR SÁ</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE GANHAVA METADE E FAZIA O DOBRO</h3>
+<p class="tit">Meio salário · escritório → metrô</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Estágio: meio salário, dobro de tarefa, e todo mundo acha normal.</p></li><li><span class="pn">2</span><p>Eu contava moeda pra decidir entre almoço e transporte.</p></li><li><span class="pn">3</span><p>Um cara que foi efetivado ano passado me chamou pra fumar.</p></li><li><span class="pn">4</span><p>Não fumo. Fui pelo papo. Ele me mostrou um grupo no celular.</p></li><li><span class="pn">5</span><p>Análise antes do jogo, de graça. Ele disse que gosta porque explica.</p></li><li><span class="pn">6</span><p>Li no metrô de volta, espremido, segurando na barra.</p></li><li><span class="pn">7</span><p>Continuo ganhando meio salário. Mas eu parei de chutar o outro meio.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Autônomo" data-t="NERI">
+<header><span class="gid">G13</span><span class="pers">Autônomo</span><span class="who" style="--t:#d9a520">NERI</span></header>
+<h3>TREZENTOS QUILÔMETROS E A CARGA ATRASOU</h3>
+<p class="tit">Parado no posto · posto de estrada</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Trezentos quilômetros e a carga não estava liberada.</p></li><li><span class="pn">2</span><p>Estrada é isso: você corre a vida inteira pra ficar esperando.</p></li><li><span class="pn">3</span><p>Outro motorista me chamou pro café enquanto a gente esperava.</p></li><li><span class="pn">4</span><p>Ele acompanha um grupo de análise. Lê antes de decidir qualquer coisa.</p></li><li><span class="pn">5</span><p>De graça. Falou que o cara posta cedo e explica o porquê.</p></li><li><span class="pn">6</span><p>Fiquei no posto até a carga sair, lendo tudo.</p></li><li><span class="pn">7</span><p>Foi a espera mais bem gasta do mês.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Empresário" data-t="IGOR SÁ">
+<header><span class="gid">G14</span><span class="pers">Empresário</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>O MELHOR FUNCIONÁRIO DELE PEDIU AS CONTAS</h3>
+<p class="tit">O funcionário que pediu as contas · oficina</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Meu melhor mecânico pediu as contas numa terça de manhã.</p></li><li><span class="pn">2</span><p>Não foi salário. Ele disse que queria tempo, não dinheiro.</p></li><li><span class="pn">3</span><p>Antes de ir embora ele me mostrou como ocupa o tempo dele agora.</p></li><li><span class="pn">4</span><p>Um grupo de análise de jogo. De graça. Ele lê, compara e decide.</p></li><li><span class="pn">5</span><p>Falou que parou de apostar no impulso no dia em que começou a ler.</p></li><li><span class="pn">6</span><p>Fiquei na oficina vazia, com o celular na mão, lendo.</p></li><li><span class="pn">7</span><p>Perdi um mecânico. Ganhei o hábito que ele tinha.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Lifestyle" data-t="IGOR SÁ">
+<header><span class="gid">G15</span><span class="pers">Lifestyle</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>ELES ADIARAM A VIAGEM PELO TERCEIRO ANO</h3>
+<p class="tit">A viagem de dezembro · sala de casa</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Terceiro ano seguido adiando a mesma viagem.</p></li><li><span class="pn">2</span><p>A gente até parou de falar o nome da cidade em voz alta.</p></li><li><span class="pn">3</span><p>Quem chegou com a novidade dessa vez foi ela.</p></li><li><span class="pn">4</span><p>Uma amiga do trabalho acompanha um grupo de análise de jogo.</p></li><li><span class="pn">5</span><p>De graça. Postam cedo, com o motivo escrito junto.</p></li><li><span class="pn">6</span><p>A gente leu junto no sofá, em vez de discutir de novo.</p></li><li><span class="pn">7</span><p>Não comprei passagem nenhuma. Mas a noite foi melhor que as outras.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Reversão" data-t="NERI|THIERRY">
+<header><span class="gid">G16</span><span class="pers">Reversão</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>ELE JÁ TINHA DESINSTALADO TUDO</h3>
+<p class="tit">Ele já tinha desinstalado · quarto → padaria</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Eu tinha desinstalado tudo. Bloqueado, apagado, jurado nunca mais.</p></li><li><span class="pn">2</span><p>Não foi decisão de força. Foi cansaço de perder no escuro.</p></li><li><span class="pn">3</span><p>Encontrei um amigo na padaria e contei, meio orgulhoso.</p></li><li><span class="pn">4</span><p>Ele falou: o problema não era o jogo, era você decidir sozinho.</p></li><li><span class="pn">5</span><p>Mostrou um grupo de análise. De graça, postado antes da rodada.</p></li><li><span class="pn">6</span><p>Passei duas semanas só lendo, sem entrar em nada.</p></li><li><span class="pn">7</span><p>Voltei diferente. Agora eu leio antes de ter opinião.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Lifestyle" data-t="IGOR SÁ|THIERRY">
+<header><span class="gid">G17</span><span class="pers">Lifestyle</span><span class="who" style="--t:#e2543c">IGOR SÁ</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>NINGUÉM SABIA COMO ELE CONSEGUIA</h3>
+<p class="tit">O amigo que ninguém entendia · churrasco</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Tinha um cara no nosso grupo que ninguém entendia.</p></li><li><span class="pn">2</span><p>Mesmo emprego que o meu, mesma faixa de salário, outra cabeça.</p></li><li><span class="pn">3</span><p>No churrasco alguém perguntou na lata: como você faz?</p></li><li><span class="pn">4</span><p>Ele riu e disse que não tem nada de mais. Abriu o celular.</p></li><li><span class="pn">5</span><p>Um grupo de análise de jogo. De graça. Ele acompanha e estuda.</p></li><li><span class="pn">6</span><p>Metade da mesa entrou ali mesmo, com o carvão ainda aceso.</p></li><li><span class="pn">7</span><p>A outra metade continuou achando que tinha segredo.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Motoboy" data-t="NERI|THIERRY">
+<header><span class="gid">G18</span><span class="pers">Motoboy</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#2ee06a">THIERRY</span></header>
+<h3>A PRAÇA INTEIRA COMEÇOU A FALAR DISSO</h3>
+<p class="tit">O assunto da praça · praça de motoboys</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Toda praça de entrega tem o assunto da semana.</p></li><li><span class="pn">2</span><p>Naquela semana era um grupo de análise que metade da praça acompanhava.</p></li><li><span class="pn">3</span><p>Eu fui o último a levar a sério, porque eu desconfio de tudo.</p></li><li><span class="pn">4</span><p>Um cara mais velho me chamou e mostrou no celular dele, sem vender nada.</p></li><li><span class="pn">5</span><p>É grátis. Postam cedo. Ele só lê e decide com calma.</p></li><li><span class="pn">6</span><p>Entrei sentado na moto, esperando a próxima corrida.</p></li><li><span class="pn">7</span><p>Virei o último a entrar e o que mais lê.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#2ee06a"><b>THIERRY</b><p>Um grupo. O do Thierry. De graça, e ele posta cedo, dá tempo de pensar.</p><p class="cta">Grupo grátis do Thierry. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="CLT" data-t="IGOR SÁ">
+<header><span class="gid">G19</span><span class="pers">CLT</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>ELE VOLTOU DE FÉRIAS E NINGUÉM ENTENDEU</h3>
+<p class="tit">Ele voltou de férias diferente · escritório</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>Ele tirou quinze dias e voltou outro.</p></li><li><span class="pn">2</span><p>Não era bronzeado, não era descanso. Era o jeito de responder.</p></li><li><span class="pn">3</span><p>A gente encheu o saco até ele contar.</p></li><li><span class="pn">4</span><p>Nas férias ele começou a acompanhar um grupo de análise de jogo.</p></li><li><span class="pn">5</span><p>De graça. Falou que o que mudou foi parar de decidir com pressa.</p></li><li><span class="pn">6</span><p>Três pessoas da sala entraram no mesmo dia. Eu fui uma.</p></li><li><span class="pn">7</span><p>Ninguém voltou de férias. Mas a segunda ficou menos pesada.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article><article class="story" data-p="Lifestyle" data-t="NERI|IGOR SÁ">
+<header><span class="gid">G20</span><span class="pers">Lifestyle</span><span class="who" style="--t:#d9a520">NERI</span><span class="who" style="--t:#e2543c">IGOR SÁ</span></header>
+<h3>O PRÉDIO INTEIRO PERGUNTAVA DO 302</h3>
+<p class="tit">O vizinho do 302 · elevador → apartamento</p>
+<details><summary>Narração, 7 planos</summary>
+<ol class="nar"><li><span class="pn">1</span><p>O prédio inteiro falava do cara do trezentos e dois.</p></li><li><span class="pn">2</span><p>Não era rico. Era tranquilo, que é uma coisa bem mais rara.</p></li><li><span class="pn">3</span><p>Peguei o elevador com ele e perguntei, porque eu não aguentava mais.</p></li><li><span class="pn">4</span><p>Ele falou que acompanha um grupo de análise e só isso.</p></li><li><span class="pn">5</span><p>Grátis, postado antes do jogo, com o motivo escrito.</p></li><li><span class="pn">6</span><p>Entrei no grupo antes de destrancar a porta do meu apartamento.</p></li><li><span class="pn">7</span><p>Continuo não sendo rico. Mas parei de decidir no susto.</p></li></ol>
+<div class="adapts"><div class="ad" style="--t:#d9a520"><b>NERI</b><p>Um grupo. O do Neri. De graça, com a análise antes do jogo.</p><p class="cta">Grupo grátis do Neri. Link na bio.</p></div><div class="ad" style="--t:#e2543c"><b>IGOR SÁ</b><p>Um grupo. O IgorSaTips. De graça, e o cara é especialista em NBA.</p><p class="cta">IgorSaTips grátis. Link na bio.</p></div></div>
+</details></article></div>
+<p class="empty" id="empty" hidden>Nenhuma narrativa com esse cruzamento.</p></div>
+
+<div class="matriz"><div class="wrap">
+<div class="eyebrow">Matriz de produção</div>
+<h2 style="font-size:clamp(22px,3vw,32px);margin:8px 0 0;color:var(--ink);font-weight:800;letter-spacing:-.02em">Dez variações por tipster</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Tipster</th><th>#</th><th>ID</th><th>Narrativa</th><th>Gancho</th></tr></thead>
+<tbody><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">01</td><td class="gid2">G01</td><td>A entrega das duas da manhã</td><td class="hk">ELE NÃO IA ACEITAR A CORRIDA</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">02</td><td class="gid2">G02</td><td>O vendedor do mostruário</td><td class="hk">ELE VENDIA O QUE NUNCA IA TER</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">03</td><td class="gid2">G04</td><td>A segunda-feira dele</td><td class="hk">ELE ODIAVA DOMINGO À NOITE</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">04</td><td class="gid2">G06</td><td>A conta da lanchonete</td><td class="hk">A CONTA DE LUZ CHEGOU PRIMEIRO</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">05</td><td class="gid2">G08</td><td>O aniversário que ele perdeu</td><td class="hk">ELE VIU O ANIVERSÁRIO DO FILHO POR VÍDEO</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">06</td><td class="gid2">G10</td><td>O bolão do trabalho</td><td class="hk">O BOLÃO DO TRABALHO NUNCA DAVA</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">07</td><td class="gid2">G13</td><td>Parado no posto</td><td class="hk">TREZENTOS QUILÔMETROS E A CARGA ATRASOU</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">08</td><td class="gid2">G16</td><td>Ele já tinha desinstalado</td><td class="hk">ELE JÁ TINHA DESINSTALADO TUDO</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">09</td><td class="gid2">G18</td><td>O assunto da praça</td><td class="hk">A PRAÇA INTEIRA COMEÇOU A FALAR DISSO</td></tr><tr style="--t:#d9a520"><td class="tp">NERI</td><td class="num">10</td><td class="gid2">G20</td><td>O vizinho do 302</td><td class="hk">O PRÉDIO INTEIRO PERGUNTAVA DO 302</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">01</td><td class="gid2">G03</td><td>Doze horas de rua</td><td class="hk">ELE RODOU 12 HORAS E NÃO DEU</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">02</td><td class="gid2">G05</td><td>O story do amigo</td><td class="hk">ELE SÓ VIA A VIDA DOS OUTROS</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">03</td><td class="gid2">G09</td><td>O irmão mais novo</td><td class="hk">O IRMÃO MAIS NOVO ZOAVA ELE</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">04</td><td class="gid2">G11</td><td>Entre um aluno e outro</td><td class="hk">ELE TINHA 40 MINUTOS DE BURACO NA AGENDA</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">05</td><td class="gid2">G12</td><td>Meio salário</td><td class="hk">ELE GANHAVA METADE E FAZIA O DOBRO</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">06</td><td class="gid2">G14</td><td>O funcionário que pediu as contas</td><td class="hk">O MELHOR FUNCIONÁRIO DELE PEDIU AS CONTAS</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">07</td><td class="gid2">G15</td><td>A viagem de dezembro</td><td class="hk">ELES ADIARAM A VIAGEM PELO TERCEIRO ANO</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">08</td><td class="gid2">G17</td><td>O amigo que ninguém entendia</td><td class="hk">NINGUÉM SABIA COMO ELE CONSEGUIA</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">09</td><td class="gid2">G19</td><td>Ele voltou de férias diferente</td><td class="hk">ELE VOLTOU DE FÉRIAS E NINGUÉM ENTENDEU</td></tr><tr style="--t:#e2543c"><td class="tp">IGOR SÁ</td><td class="num">10</td><td class="gid2">G20</td><td>O vizinho do 302</td><td class="hk">O PRÉDIO INTEIRO PERGUNTAVA DO 302</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">01</td><td class="gid2">G01</td><td>A entrega das duas da manhã</td><td class="hk">ELE NÃO IA ACEITAR A CORRIDA</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">02</td><td class="gid2">G03</td><td>Doze horas de rua</td><td class="hk">ELE RODOU 12 HORAS E NÃO DEU</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">03</td><td class="gid2">G04</td><td>A segunda-feira dele</td><td class="hk">ELE ODIAVA DOMINGO À NOITE</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">04</td><td class="gid2">G07</td><td>O turno da madrugada</td><td class="hk">SETE HORAS OLHANDO UM CORREDOR VAZIO</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">05</td><td class="gid2">G08</td><td>O aniversário que ele perdeu</td><td class="hk">ELE VIU O ANIVERSÁRIO DO FILHO POR VÍDEO</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">06</td><td class="gid2">G10</td><td>O bolão do trabalho</td><td class="hk">O BOLÃO DO TRABALHO NUNCA DAVA</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">07</td><td class="gid2">G12</td><td>Meio salário</td><td class="hk">ELE GANHAVA METADE E FAZIA O DOBRO</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">08</td><td class="gid2">G16</td><td>Ele já tinha desinstalado</td><td class="hk">ELE JÁ TINHA DESINSTALADO TUDO</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">09</td><td class="gid2">G17</td><td>O amigo que ninguém entendia</td><td class="hk">NINGUÉM SABIA COMO ELE CONSEGUIA</td></tr><tr style="--t:#2ee06a"><td class="tp">THIERRY</td><td class="num">10</td><td class="gid2">G18</td><td>O assunto da praça</td><td class="hk">A PRAÇA INTEIRA COMEÇOU A FALAR DISSO</td></tr></tbody></table></div>
+<div class="notes">
+<div><h4>O que muda entre um tipster e outro</h4><p>A linha 5 da narração, onde o grupo é nomeado. O CTA do último plano. E a cor da legenda karaokê. Nada mais.</p></div>
+<div><h4>Keyframe se reaproveita</h4><p>Cenário, personagem e enquadramento são idênticos entre as versões. Gere a peça uma vez e produza duas trocando áudio, cor e pack shot.</p></div>
+<div><h4>Comece pelas repetidas</h4><p>G01, G03, G04, G08, G10, G12, G16, G17, G18, G20 servem dois tipsters cada — rendem duas peças pelo custo de uma.</p></div>
+<div class="warn"><h4>A linha que não se cruza</h4><p>O público é apertado de dinheiro, e por isso nenhuma narrativa liga aposta a pagar conta, sair do aperto ou retorno garantido. O que se vende é acompanhar a análise de quem estuda o jogo.</p></div>
+</div>
+<footer>MINISTÉRIO DA FAZENDA ADVERTE: APOSTA NÃO É INVESTIMENTO · LICENÇA SPA/MF · 18+ · JOGUE COM RESPONSABILIDADE<br>
+TODOS OS PLANOS MUDOS · NARRAÇÃO EM TAKE ÚNICO NA MONTAGEM · MATERIAL DE PRODUÇÃO INTERNO</footer>
+</div></div>
+
+<script>
+var F={t:"",p:""};
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest('.chip'); if(!b) return;
+  var k=b.dataset.f; F[k]=b.dataset.v;
+  document.querySelectorAll('.chip[data-f="'+k+'"]').forEach(function(c){
+    c.setAttribute('aria-pressed', c===b ? 'true':'false');});
+  var n=0;
+  document.querySelectorAll('.story').forEach(function(s){
+    var okT=!F.t||s.dataset.t.split('|').indexOf(F.t)>=0;
+    var okP=!F.p||s.dataset.p===F.p;
+    s.hidden=!(okT&&okP); if(!s.hidden) n++;
+  });
+  document.getElementById('empty').hidden = n>0;
+});
+</script>
